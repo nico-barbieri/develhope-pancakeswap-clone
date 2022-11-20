@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    /*TEXT*/
+    --title: 600 64px / 70.4px 'Kanit';
+    --sub-title: 600 20px / 22px 'Kanit';
+    --small-title: 600 40px / 44px 'Kanit';
+    --paragraph: 400 16px / 24px 'Kanit';
+    /*COLOURS*/
+    --primary: #FFFFFF;
+    --primary-darker: #eff4f5;
+    --secondary: #7645D9;
+    --secondary-darker: #280d5f;
+    --secondary-lighter: #7a6eaa; 
+    --secondary-lightest: #b8add2;
+    --accent: #1fc7d4;
+    --accent-alert-soft: #ffb237;
+    --accent-alert-strong: #ED4B9E;
+    --background-alt: #27262c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+body {
+    padding: 1rem;
+}
+
+.guidelines-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: #EDEFF4;
+    padding: 1rem;
+}
+.guidelines-title {
+    font: var(--title);
+    margin-bottom: 2rem;
+}
+.section-title {
+    font: var(--small-title);
+}
+
+.palettes {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: white;
+    padding: 1rem;
+}
+
+.palettes h3{
+    font: var(--sub-title);
+}
+.palettes h3 span{
+    font: var(--paragraph);
+    margin-left: 1ch;
+    opacity: .7;
+}
+
+.palettes .light-mode {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    padding: 0 1rem;
+}
+
+.light-palette-container {
+    display: flex;
+    margin-top: 1rem;
+    gap: .75rem;
+}
+
+.color-box {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+}
+
+.color {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 10%;
+    /*border: solid 2px rgb(0, 0, 0, .1);*/
+}
+
+.color-hex::before {
+    font: var(--paragraph);
+    text-transform: uppercase;
+}
+
+.light-mode .color-box:nth-child(1) .color {
+    background-color: var(--primary);
+    border: solid 2px rgb(0, 0, 0, .1);
+}
+.light-mode .color-box:nth-child(1) .color-hex::before {
+    content: "#FFFFFF";  
+}
+
+.light-mode .color-box:nth-child(2) .color {
+    background-color: var(--primary-darker);
+}
+.light-mode .color-box:nth-child(2) .color-hex::before {
+    content: "#EFF4F5";
+}
+.light-mode .color-box:nth-child(3) .color {
+    background-color: var(--secondary-darker);
+}
+.light-mode .color-box:nth-child(3) .color-hex::before {
+    content: "#280D5F";
+}
+.light-mode .color-box:nth-child(4) .color {
+    background-color: var(--secondary);
+}
+.light-mode .color-box:nth-child(4) .color-hex::before {
+    content: "#7645D9";
+}
+.light-mode .color-box:nth-child(5) .color {
+    background-color: var(--secondary-lighter);
+}
+.light-mode .color-box:nth-child(5) .color-hex::before {
+    content: "#7A6EAA";
+}
+.light-mode .color-box:nth-child(6) .color {
+    background-color: var(--secondary-lightest);
+}
+.light-mode .color-box:nth-child(6) .color-hex::before {
+    content: "#b8add2";
+}
+.light-mode .color-box:nth-child(7) .color {
+    background-color: var(--accent);
+}
+.light-mode .color-box:nth-child(7) .color-hex::before {
+    content: "#1fc7d4";
+}
+.light-mode .color-box:nth-child(8) .color {
+    background-color: var(--accent-alert-soft);
+}
+.light-mode .color-box:nth-child(8) .color-hex::before {
+    content: "#ffb237";
+}
+.light-mode .color-box:nth-child(9) .color {
+    background-color: var(--accent-alert-strong);
+}
+.light-mode .color-box:nth-child(9) .color-hex::before {
+    content: "#ED4B9E";
+}
+.light-mode .color-box:nth-child(10) .color {
+    background-color: var(--background-alt);
+}
+.light-mode .color-box:nth-child(10) .color-hex::before {
+    content: "#27262c";
+}
+
+.palettes .dark-mode {
+    display: none;
+    margin-top: 1rem;
+    flex-direction: column;
+    padding: 0 1rem;
+}
