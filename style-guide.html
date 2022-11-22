@@ -18,11 +18,22 @@
         <h1 class="guidelines-title">
             PancakeSwap Style Guidelines
         </h1>
+        <form class="change-theme" action="" onchange="detextHexCode()">
+            <fieldset>
+              <p class="">Switch theme</p>
+                <div class="inputs">
+                    <label for="light" class="visually-hidden">Light</label>
+                    <input type="radio" name="theme" id="light" checked>
+                
+                    <label for="dark" class="visually-hidden">Dark</label>
+                    <input type="radio" id="dark" name="theme">
+                </div>
+            </fieldset>
+          </form>
         <!--TEXT-->
         <div class="text-style section">
             <h2 class="section-title">Text Style</h2>
             <div class="text-examples-container">
-                <p>hover to see in dark mode</p>
                 <div class="text-examples">
                     <div class="text-box">
                         <h1 class="title">This is a title (h1)</h1>
@@ -37,17 +48,51 @@
                         <p class="paragraph">This is a paragraph (p)</p>
                     </div>
                 </div>
+                <div class="text-properties-table">
+                    <div class="text-properties-row">
+                        <div class="text-type"><p>Title</p></div>
+                        <div class="text-variables">
+                            <p>font: var(--title);</p>
+                            <p>color: var(--secondary);</p>
+                        </div>
+                        <div class="text-properties"><p>600 64px / 70.4px 'Kanit'</p></div>
+                    </div>
+                    <div class="text-properties-row">
+                        <div class="text-type"><p>Small title</p></div>
+                        <div class="text-variables">
+                            <p>font: var(--small-title);</p>
+                            <p>color: var(--secondary-darker);<br><i>in darkmode, color: var(--primary-static);</i></p>
+                        </div>
+                        <div class="text-properties"><p>600 40px / 44px 'Kanit'</p></div>
+                    </div>
+                    <div class="text-properties-row">
+                        <div class="text-type"><p>Subtitle</p></div>
+                        <div class="text-variables">
+                            <p>font: var(--sub-title);</p>
+                            <p>color: var(--secondary-darker);<br><i>in darkmode, color: var(--primary-static);</i></p>
+                        </div>
+                        <div class="text-properties"><p>600 20px / 22px 'Kanit'</p></div>
+                    </div>
+                    <div class="text-properties-row">
+                        <div class="text-type"><p>Paragraph</p></div>
+                        <div class="text-variables">
+                            <p>font: var(--paragraph);</p>
+                            <p>color: var(--secondary-lighter);<br><i>in darkmode, color: var(--secondary-lightest);</i></p>
+                        </div>
+                        <div class="text-properties"><p>400 16px / 24px 'Kanit'</p></div>
+                    </div>
+                </div>
             </div>
         </div>
         <!--COLOURS-->
         <div class="palettes section">
             <h2 class="section-title">Color Palettes</h2>
             <div class="light-mode">
-                <h3>Light Mode <span>(in dark mode "primary-darkmode" substitutes "primary")</span></h3>
+                <h3>Light Mode <span>(Depending on mode "primary" switches between "primary-static" and "primary-darkmode")</span></h3>
                 <p>hover to see variable names</p>
                 <div class="light-palette-container">
                     <div class="color-box">
-                        <div class="color"><span>primary</span></div>
+                        <div class="color"><span>primary-static</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
@@ -87,7 +132,8 @@
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"><span>primary-darkmode</span></div>
+                        <div class="color"><span>primary</span></div>
+                        <h3>Current primary color:</h3>
                         <h3 class="color-hex"></h3>
                     </div>
                 </div>
@@ -97,26 +143,51 @@
             </div>
         </div>
         <!--BUTTONS-->
+        <div class="buttons section">
+            <h2 class="section-title">Buttons&Links</h2>
+            <div class="buttons-examples-container">
+                <div class="button-examples">
+                    <div class="button-box">
+                        <button class="main-button">Main Button</button>
+                    </div>
+
+                    <div class="button-box">
+                        <a href="" class="fake-button">Fake Button</a>
+                    </div>
+                
+                    <div class="button-box">
+                        <a href="#" class="link">Link</a>
+                    </div>
+
+                    <div class="button-box">
+                        <button class="menu-button">Menu Button</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 <script>
-    const $hexBox = document.querySelectorAll('.color-box');
-    for (let i = 0; i < $hexBox.length; i++) {
-        let _hexBox = $hexBox[i];
-        let hexSpace = _hexBox.querySelectorAll('.color-hex')[0];
-        let color = _hexBox.querySelectorAll('.color')[0];
-        let colorValue = window.getComputedStyle(color).getPropertyValue('background-color');
-        colorValue = colorValue.split("(")[1].split(")")[0];
-        function rgbToHex(rgb) {
-            rgb = rgb.split(",");
-            converted = rgb.map((x) => {
-                x = parseInt(x).toString(16);
-                return (x.length==1) ? "0"+ x : x;
-            })
-            converted = "#" + converted.join("");
-            return converted
+    function detextHexCode() {
+        const $hexBox = document.querySelectorAll('.color-box');
+        for (let i = 0; i < $hexBox.length; i++) {
+            let _hexBox = $hexBox[i];
+            let hexSpace = _hexBox.querySelectorAll('.color-hex')[0];
+            let color = _hexBox.querySelectorAll('.color')[0];
+            let colorValue = window.getComputedStyle(color).getPropertyValue('background-color');
+            colorValue = colorValue.split("(")[1].split(")")[0];
+            function rgbToHex(rgb) {
+                rgb = rgb.split(",");
+                converted = rgb.map((x) => {
+                    x = parseInt(x).toString(16);
+                    return (x.length==1) ? "0"+ x : x;
+                })
+                converted = "#" + converted.join("");
+                return converted
+            }
+            hexSpace.innerHTML = rgbToHex(colorValue);
         }
-        hexSpace.innerHTML = rgbToHex(colorValue);
     }
+    detextHexCode();   
 </script>
 </body>
 </html>
