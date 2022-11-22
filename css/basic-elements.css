@@ -1,0 +1,243 @@
+/***********/
+/*VARIABLES*/
+/***********/
+
+:root {
+    /*TEXT*/
+    --title: 600 64px / 70.4px 'Kanit';
+    --sub-title: 600 20px / 22px 'Kanit';
+    --small-title: 600 40px / 44px 'Kanit';
+    --paragraph: 400 16px / 24px 'Kanit';
+    --link: 600 16px / 1 'Kanit';
+    /*COLOURS*/
+    --primary: #FFFFFF;
+    --primary-static: #FFFFFF;
+    --primary-darker: #eff4f5;
+    --secondary: #7645D9;
+    --secondary-darker: #280d5f;
+    --secondary-lighter: #7a6eaa; 
+    --secondary-lightest: #b8add2;
+    --accent: #1fc7d4;
+    --accent-alert-soft: #ffb237;
+    --accent-alert-strong: #ED4B9E;
+    --background-alt: #27262c;
+    --primary-darkmode: #08060B;
+    --disabled: #666171;
+    /*BUTTONS*/
+    --main-button-shadow: inset 0px -1px 0px 0px rgb(14 14 44 / 40%);
+    --button-border-radius: 1rem;
+    --button-height: 3rem;
+    --button-small-height: 2rem;
+    --button-padding: 0 1.5rem;
+}
+  
+:root:has(#dark-mode:checked) {
+    --primary: var(--primary-darkmode);
+}
+
+/******************/
+/*GENERAL SETTINGS*/
+/******************/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    /*transition: all .2s ease-in-out;*/
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/*****************/
+/*TEXT PROPERTIES*/
+/*****************/
+
+        .title {
+            font: var(--title);
+            color: var(--secondary);
+        }
+        .small-title {
+            font: var(--small-title);
+            color: var(--secondary-darker);
+        }
+        .sub-title {
+            font: var(--sub-title);
+            color: var(--secondary-darker);
+        }
+        .paragraph {
+            font: var(--paragraph);
+            color: var(--secondary-lighter);
+        }
+
+/*DARK MODE*/
+        :root:has(#dark-mode:checked) .text-box .small-title {
+            color: var(--primary-static);
+        }
+        :root:has(#dark-mode:checked) .text-box .sub-title {
+            color: var(--primary-static);
+        }
+        :root:has(#dark-mode:checked) .text-box .paragraph {
+            color: var(--secondary-lightest);
+        }
+
+/********************/
+/*BUTTONS PROPERTIES*/
+/********************/
+
+/*MAIN BUTTON*/
+        .main-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*Style*/
+            height: var(--button-height);
+            padding: var(--button-padding);
+            background-color: var(--accent);
+            border-radius: var(--button-border-radius);
+            box-shadow: var(--main-button-shadow);
+            /*Font*/
+            font: var(--link);
+            color: var(--primary);
+            letter-spacing: 0.03em;
+
+            cursor: pointer;
+            transition: all 0s;
+        }
+        .main-button:hover {
+            opacity: .66;
+        }
+        .main-button:active {
+            opacity: .85;
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+
+/*FAKE BUTTON (links that look like a button)*/
+        .fake-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*Style*/
+            height: var(--button-height);
+            padding: var(--button-padding);
+            background-color: transparent;
+            border: solid 2px var(--accent);
+            border-radius: var(--button-border-radius);
+            /*Font*/
+            font: var(--link);
+            color: var(--accent);
+            letter-spacing: 0.03em;
+
+            cursor: pointer;
+            transition: all 0s;
+        }
+        .fake-button:hover {
+            opacity: .66;
+        }
+        .fake-button:active {
+            opacity: .85;
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+
+/*LINK*/
+        .link {
+            font: var(--link);
+            color: var(--accent);
+        }
+        .link:hover {
+            text-decoration: underline;
+        }
+
+/*MENU BUTTON*/
+        .menu-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /*Style*/
+            height: var(--button-small-height);
+            padding: var(--button-padding);
+            background-color: var(--accent);
+            border-radius: calc(var(--button-small-height) / 2);
+            box-shadow: var(--main-button-shadow);
+            /*Font*/
+            font: var(--link);
+            color: var(--primary);
+            letter-spacing: 0.03em;
+
+            cursor: pointer;
+            transition: all 0s;
+        }
+        .menu-button:hover {
+            opacity: .66;
+        }
+        .menu-button:active {
+            opacity: .85;
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+
+/*TOGGLE SWITCH*/
+        .toggle-switch {
+            position: relative;
+            height: var(--button-small-height);
+            width: calc(var(--button-small-height) * 1.75);
+            border-radius: calc(var(--button-small-height) / 2);
+            background: var(--disabled);
+            transition: all .3s ease-in-out;
+        }
+        .toggle-switch input {
+            appearance: none; 
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            z-index: 100;
+        }
+        .switch-base {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            padding: 4px;
+        }
+        .switch-base img {
+            margin: 2px;
+            object-fit: contain;
+        }
+        .switch-icon {
+            position: absolute;
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            padding: 3px;
+            height: var(--button-small-height);
+            width: var(--button-small-height);
+            border-radius: 50%;
+            border: solid 4px var(--disabled);
+            background: var(--background-alt);
+            transition: all .3s ease-in-out;
+        }
+        .switch-icon::after {
+            content: "";
+            background-image: url(../res/icons/sun-colored.svg);
+            background-size: cover;
+            content: "";
+            height: 100%;
+            width: 100%;
+        }
+        .toggle-switch input:hover ~ .switch-icon {
+            border: solid 4px var(--secondary);
+        }
+        .toggle-switch input:checked ~ .switch-icon {
+            transform: translateX(calc(100% - 8px));
+        }
+        .toggle-switch input:checked ~ .switch-icon::after {
+            background-image: url(../res/icons/moon-colored.svg);
+        }
