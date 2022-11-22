@@ -18,15 +18,16 @@
         <h1 class="guidelines-title">
             PancakeSwap Style Guidelines
         </h1>
-        <form class="change-theme" action="" onchange="detextHexCode()">
+        <form class="change-theme" action="" onchange="detectHexCode()">
             <fieldset>
-              <p class="">Switch theme</p>
-                <div class="inputs">
-                    <label for="light" class="visually-hidden">Light</label>
-                    <input type="radio" name="theme" id="light" checked>
-                
-                    <label for="dark" class="visually-hidden">Dark</label>
-                    <input type="radio" id="dark" name="theme">
+                <p>Switch theme</p>
+                <div class="toggle-switch">
+                    <input type="checkbox" id="dark-mode"> <!-- insert id="dark-mode" to make it work-->
+                    <div class="switch-base">
+                        <img src="./res/icons/sun-black.svg" alt="sun icon b&n">
+                        <img src="./res/icons/moon-black.svg" alt="sun icon b&n">
+                    </div>
+                    <div class="switch-icon"></div>
                 </div>
             </fieldset>
           </form>
@@ -162,12 +163,23 @@
                     <div class="button-box">
                         <button class="menu-button">Menu Button</button>
                     </div>
+
+                    <div class="button-box">
+                        <div class="toggle-switch">
+                            <input type="checkbox"> <!-- insert id="dark-mode" to make it work-->
+                            <div class="switch-base">
+                                <img src="./res/icons/sun-black.svg" alt="sun icon b&n">
+                                <img src="./res/icons/moon-black.svg" alt="sun icon b&n">
+                            </div>
+                            <div class="switch-icon"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 <script>
-    function detextHexCode() {
+    function detectHexCode() {
         const $hexBox = document.querySelectorAll('.color-box');
         for (let i = 0; i < $hexBox.length; i++) {
             let _hexBox = $hexBox[i];
@@ -187,7 +199,7 @@
             hexSpace.innerHTML = rgbToHex(colorValue);
         }
     }
-    detextHexCode();   
+    detectHexCode();   
 </script>
 </body>
 </html>
