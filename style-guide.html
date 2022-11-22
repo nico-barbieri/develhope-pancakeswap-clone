@@ -19,50 +19,75 @@
             PancakeSwap Style Guidelines
         </h1>
         <!--TEXT-->
+        <div class="text-style section">
+            <h2 class="section-title">Text Style</h2>
+            <div class="text-examples-container">
+                <p>hover to see in dark mode</p>
+                <div class="text-examples">
+                    <div class="text-box">
+                        <h1 class="title">This is a title (h1)</h1>
+                    </div>
+                    <div class="text-box">
+                        <h2 class="small-title">This is a small-title (h2)</h2>
+                    </div>
+                    <div class="text-box">
+                        <h3 class="sub-title">This is a sub-title (h3)</h3>
+                    </div>
+                    <div class="text-box">
+                        <p class="paragraph">This is a paragraph (p)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!--COLOURS-->
-        <div class="palettes">
-            <h2 class="section-title">Colour Palettes</h2>
+        <div class="palettes section">
+            <h2 class="section-title">Color Palettes</h2>
             <div class="light-mode">
-                <h3>Light Mode <span>(in dark mode the primary color is inverted)</span></h3>
+                <h3>Light Mode <span>(in dark mode "primary-darkmode" substitutes "primary")</span></h3>
+                <p>hover to see variable names</p>
                 <div class="light-palette-container">
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>primary</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>primary-darker</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>secondary-darker</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>secondary</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>secondary-lighter</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>secondary-lightest</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>accent</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>accent-alert-soft</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>accent-alert-strong</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                     <div class="color-box">
-                        <div class="color"></div>
+                        <div class="color"><span>background-alt</span></div>
+                        <h3 class="color-hex"></h3>
+                    </div>
+                    <div class="color-box">
+                        <div class="color"><span>primary-darkmode</span></div>
                         <h3 class="color-hex"></h3>
                     </div>
                 </div>
@@ -73,6 +98,25 @@
         </div>
         <!--BUTTONS-->
     </div>
-
+<script>
+    const $hexBox = document.querySelectorAll('.color-box');
+    for (let i = 0; i < $hexBox.length; i++) {
+        let _hexBox = $hexBox[i];
+        let hexSpace = _hexBox.querySelectorAll('.color-hex')[0];
+        let color = _hexBox.querySelectorAll('.color')[0];
+        let colorValue = window.getComputedStyle(color).getPropertyValue('background-color');
+        colorValue = colorValue.split("(")[1].split(")")[0];
+        function rgbToHex(rgb) {
+            rgb = rgb.split(",");
+            converted = rgb.map((x) => {
+                x = parseInt(x).toString(16);
+                return (x.length==1) ? "0"+ x : x;
+            })
+            converted = "#" + converted.join("");
+            return converted
+        }
+        hexSpace.innerHTML = rgbToHex(colorValue);
+    }
+</script>
 </body>
 </html>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
+/***********/
+/*VARIABLES*/
+/***********/
+
 :root {
     /*TEXT*/
     --title: 600 64px / 70.4px 'Kanit';
@@ -17,143 +21,233 @@
     --accent-alert-soft: #ffb237;
     --accent-alert-strong: #ED4B9E;
     --background-alt: #27262c;
+    --primary-darkmode: #08060B;
 }
+
 
 * {
     margin: 0;
     padding: 0;
     border: 0;
     box-sizing: border-box;
+    transition: all .1s ease-in-out;
 }
 body {
     padding: 1rem;
+    background-color: var(--primary-darker);
 }
-
 .guidelines-wrapper {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    background-color: #EDEFF4;
+    max-width: 100rem;
+    margin: 0 auto;
     padding: 1rem;
 }
 .guidelines-title {
     font: var(--title);
     margin-bottom: 2rem;
+    color: var(--background-alt);
 }
 .section-title {
     font: var(--small-title);
+    color: var(--background-alt);
 }
-
-.palettes {
+.section {
     display: flex;
     flex-direction: column;
     width: 100%;
-    background-color: white;
     padding: 1rem;
+
+    background-color: white;
+    box-shadow: 4px 5px 10px -7px rgba(0,0,0,0.1),0px 10px 15px -3px rgba(0,0,0,0.1);
 }
+
+/**************/
+/*TEXT SECTION*/
+/**************/
+
+.text-examples-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+}
+.text-examples-container p {
+    font-family: 'Kanit';
+    font-size: 12px;
+    font-weight: 300;
+    opacity: .7;
+    margin-top: 1rem;
+}
+.text-examples {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    gap: .75rem;
+}
+.text-box {
+    display: flex;
+     /*To limit number of columns to 2 */
+    min-width: calc(50% - (2rem + .75rem)); /*50% - (left&right padding + gap)*/
+    /*To keep all boxes the same height */
+    min-height: calc(64px + 2rem); /*biggest font size + top&bottom padding*/
+    
+    border: solid 2px var(--primary-darker);
+    border-radius: 10px;
+    padding: 1rem;
+
+    flex: 1 1 30rem;
+    align-items: flex-end;
+}
+.text-box > * { 
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+/*****************/
+/*TEXT PROPERTIES*/
+/*****************/
+
+.text-box .title {
+    font: var(--title);
+    color: var(--secondary);
+}
+.text-box .small-title {
+    font: var(--small-title);
+    color: var(--secondary-darker);
+}
+.text-box .sub-title {
+    font: var(--sub-title);
+    color: var(--secondary-darker);
+}
+.text-box .paragraph {
+    font: var(--paragraph);
+    color: var(--secondary-lighter);
+}
+
+/*DARK MODE*/
+
+.text-box:hover {
+    background-color: var(--primary-darkmode);
+}
+.text-box:hover .title {
+    font: var(--title);
+    color: var(--secondary);
+}
+.text-box:hover .small-title {
+    font: var(--small-title);
+    color: var(--primary);
+}
+.text-box:hover .sub-title {
+    font: var(--sub-title);
+    color: var(--primary);
+}
+.text-box:hover .paragraph {
+    font: var(--paragraph);
+    color: var(--secondary-lightest);
+}
+
+
+/********/
+/*COLORS*/
+/********/
 
 .palettes h3{
     font: var(--sub-title);
+    color: var(--background-alt);
 }
 .palettes h3 span{
     font: var(--paragraph);
     margin-left: 1ch;
     opacity: .7;
 }
-
 .palettes .light-mode {
     display: flex;
     flex-direction: column;
     margin-top: 1rem;
     padding: 0 1rem;
 }
-
+.light-mode p {
+    font-family: 'Kanit';
+    font-size: 12px;
+    font-weight: 300;
+    opacity: .7;
+    margin-top: 1rem;
+}
 .light-palette-container {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 1rem;
     gap: .75rem;
 }
-
 .color-box {
     display: flex;
     flex-direction: column;
     gap: .5rem;
     align-items: center;
 }
-
 .color {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 10%;
-    /*border: solid 2px rgb(0, 0, 0, .1);*/
+    width: 6rem;
+    height: 6rem;
+    border-radius: 10px;
 }
-
-.color-hex::before {
+.color span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    font: 200 12px 'Kanit';
+    color: var(--background-alt);
+    background-color: white;
+    box-shadow: inset 0 0 0 2px var(--primary-darker);
+    border-radius: 10px;
+    padding: .5rem;
+    opacity: 0;
+}
+.color:hover span {
+    opacity: 1;
+}
+.color-hex {
+    display: flex;
+    justify-content: center;
+    max-width: 6rem;
     font: var(--paragraph);
     text-transform: uppercase;
 }
-
+/*Color boxes and hex codes*/
 .light-mode .color-box:nth-child(1) .color {
     background-color: var(--primary);
-    border: solid 2px rgb(0, 0, 0, .1);
+    box-shadow: inset 0 0 0 2px rgb(0, 0, 0, .1);
 }
-.light-mode .color-box:nth-child(1) .color-hex::before {
-    content: "#FFFFFF";  
-}
-
 .light-mode .color-box:nth-child(2) .color {
     background-color: var(--primary-darker);
-}
-.light-mode .color-box:nth-child(2) .color-hex::before {
-    content: "#EFF4F5";
 }
 .light-mode .color-box:nth-child(3) .color {
     background-color: var(--secondary-darker);
 }
-.light-mode .color-box:nth-child(3) .color-hex::before {
-    content: "#280D5F";
-}
 .light-mode .color-box:nth-child(4) .color {
     background-color: var(--secondary);
-}
-.light-mode .color-box:nth-child(4) .color-hex::before {
-    content: "#7645D9";
 }
 .light-mode .color-box:nth-child(5) .color {
     background-color: var(--secondary-lighter);
 }
-.light-mode .color-box:nth-child(5) .color-hex::before {
-    content: "#7A6EAA";
-}
 .light-mode .color-box:nth-child(6) .color {
     background-color: var(--secondary-lightest);
-}
-.light-mode .color-box:nth-child(6) .color-hex::before {
-    content: "#b8add2";
 }
 .light-mode .color-box:nth-child(7) .color {
     background-color: var(--accent);
 }
-.light-mode .color-box:nth-child(7) .color-hex::before {
-    content: "#1fc7d4";
-}
 .light-mode .color-box:nth-child(8) .color {
     background-color: var(--accent-alert-soft);
-}
-.light-mode .color-box:nth-child(8) .color-hex::before {
-    content: "#ffb237";
 }
 .light-mode .color-box:nth-child(9) .color {
     background-color: var(--accent-alert-strong);
 }
-.light-mode .color-box:nth-child(9) .color-hex::before {
-    content: "#ED4B9E";
-}
 .light-mode .color-box:nth-child(10) .color {
     background-color: var(--background-alt);
 }
-.light-mode .color-box:nth-child(10) .color-hex::before {
-    content: "#27262c";
+.light-mode .color-box:nth-child(11) .color {
+    background-color: var(--primary-darkmode);
 }
 
 .palettes .dark-mode {
@@ -162,3 +256,4 @@ body {
     flex-direction: column;
     padding: 0 1rem;
 }
+
