@@ -120,6 +120,47 @@ a {
             color: var(--secondary-lightest);
         }
 
+
+/********/
+/*COLORS*/
+/********/
+
+        /*Font color*/
+        .color-sec {
+            color: var(--secondary);
+        }
+        .color-acc {
+            color: var(--accent);
+        }
+        .color-acc-soft {
+            color: var(--accent-alert-soft);
+        }
+        .color-acc-strong {
+            color: var(--accent-alert-strong);
+        }
+        /*Bg color*/
+        .bg-color-prim {
+            background: var(--primary);
+        }
+        .bg-color-prim-darker {
+            background: var(--primary-darker);
+        }
+        .bg-color-dark {
+            background: var(--background-alt);
+        }
+        .bg-color-sec {
+            background: var(--secondary);
+        }
+        .bg-color-acc {
+            background: var(--accent);
+        }
+        .bg-color-acc-soft {
+            background: var(--accent-alert-soft);
+        }
+        .bg-color-acc-strong {
+            background: var(--accent-alert-strong);
+        }
+
 /********************/
 /*BUTTONS PROPERTIES*/
 /********************/
