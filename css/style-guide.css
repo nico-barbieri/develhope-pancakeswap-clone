@@ -666,6 +666,7 @@ a {
     box-shadow: var(--big-card-shadow);
     mix-blend-mode: color-burn;
     pointer-events: none;
+    backface-visibility: hidden;
 }
 .big-card .big-card-icon{
     text-align: end;
@@ -682,6 +683,7 @@ a {
 }
 .big-card .cta button {
     width: 100%;
+    transition: opacity .2s ease-in;
 }
 .big-card .cta svg{
     fill: var(--primary);

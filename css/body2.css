@@ -3,11 +3,11 @@
     flex-direction: row;
 }
 .body2-minicontainer1-BG{
- background-color: black;
+ background-color: #A7D1F4;
  padding: 3rem 1rem;
 }
 .body2-minicontainer1{
-    background-color: rgba(255, 255, 255, 0.377);
+    background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid white;
     border-radius: 50px;
     width: 920px;

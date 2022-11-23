@@ -30,14 +30,13 @@
     --button-small-height: 2rem;
     --button-padding: 0 1.5rem;
     /*GRADIENTS*/
-    --gradient-accent-alert-soft: linear-gradient(#fdab32, #ffd800);
+    --gradient-accent-alert-soft: linear-gradient(var(--accent-alert-soft), #FFE76A);
     --gradient-secondary: linear-gradient(var(--secondary), #5121b1);
     /*CARDS*/
     --big-card-h: 23rem;
     --big-card-w: 18rem;
     --big-card-border-radius: 1.5rem;
     --big-card-padding: 1.5rem;
-    --big-card-shadow: inset 0px -4px 0px 0px rgb(0 0 0 / 30%);
 }
   
 :root:has(#dark-mode:checked) {
@@ -287,6 +286,7 @@ a {
             border-radius: var(--big-card-border-radius);
             font: var(--paragraph);
         }
+        /*
         .big-card::after {
             content: " ";
             height: 100%;
@@ -299,6 +299,7 @@ a {
             mix-blend-mode: color-burn;
             pointer-events: none;
         }
+        */
         .big-card .big-card-icon{
             text-align: end;
         }
@@ -314,6 +315,7 @@ a {
         }
         .big-card .cta button {
             width: 100%;
+            transition: opacity 0.2s ease 0s;
         }
         .big-card .cta svg{
             fill: var(--primary);
@@ -322,11 +324,13 @@ a {
         .yellow-card {
             background: var(--gradient-accent-alert-soft);
             color: var(--secondary-darker);
+            box-shadow: inset 0px -4px 0px 0px var(--accent-alert-soft);
         }
         /*Purple card*/
         .purple-card{
             background: var(--gradient-secondary);
             color: var(--primary-static);
+            box-shadow: inset 0px -4px 0px 0px var(--secondary-darker);
         }
         .purple-card .amount {
             background-image : var(--gradient-accent-alert-soft);
