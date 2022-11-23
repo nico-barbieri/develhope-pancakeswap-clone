@@ -749,6 +749,9 @@ svg {
     color: var(--secondary-darker);
     box-shadow: inset 0px -4px 0px 0px var(--accent-alert-soft);
 }
+.yellow-card .small-title{
+    color: var(--secondary-darker) !important;
+}
 /*Purple card*/
 .purple-card{
     background: var(--gradient-secondary);
