@@ -177,6 +177,62 @@
                 </div>
             </div>
         </div>
+
+        <div class="cards section">
+            <h2 class="section-title">Cards</h2>
+            <div class="cards-container">
+                <div class="card-box">
+                    <div class="big-card yellow-card left-card">
+                        <div class="big-card-icon">
+                            <img src="./res/icons/svgexport-26.svg" alt="icona-svg">
+                        </div>
+                        <div class="big-card-title">
+                            <p class="paragraph-bold">Lorem ipsum</p>
+                            <h2 class="small-title amount">$999,999</h2>
+                            <p class="paragraph-bold">Lorem ipsum dolor sit amet consectetur.</p>
+                        </div>
+                        <div class="caption">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, eius!</p>
+                        </div>
+                        <div class="cta">
+                            <a href="#">
+                                <button class="main-button">
+                                    <span>Click me</span>
+                                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" color="invertedContrast" width="24" xmlns="http://www.w3.org/2000/svg" class="sc-4ba21b47-0 dBIaUm" height="24" >
+                                        <path d="M5 13H16.17L11.29 17.88C10.9 18.27 10.9 18.91 11.29 19.3C11.68 19.69 12.31 19.69 12.7 19.3L19.29 12.71C19.68 12.32 19.68 11.69 19.29 11.3L12.71 4.7C12.32 4.31 11.69 4.31 11.3 4.7C10.91 5.09 10.91 5.72 11.3 6.11L16.17 11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13Z"></path>
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-box">
+                    <div class="big-card purple-card right-card">
+                        <div class="big-card-icon">
+                            <img src="./res/icons/svgexport-28.svg" alt="icona-svg">
+                        </div>
+                        <div class="big-card-title">
+                            <p class="paragraph-bold">Lorem ipsum</p>
+                            <h2 class="small-title amount">$999,999</h2>
+                            <p class="paragraph-bold">Lorem ipsum dolor sit amet consectetur.</p>
+                        </div>
+                        <div class="caption">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, eius!</p>
+                        </div>
+                        <div class="cta">
+                            <a href="#">
+                                <button class="main-button">
+                                    <span>Click me</span>
+                                    <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" color="invertedContrast" width="24" xmlns="http://www.w3.org/2000/svg" class="sc-4ba21b47-0 dBIaUm" height="24" >
+                                        <path d="M5 13H16.17L11.29 17.88C10.9 18.27 10.9 18.91 11.29 19.3C11.68 19.69 12.31 19.69 12.7 19.3L19.29 12.71C19.68 12.32 19.68 11.69 19.29 11.3L12.71 4.7C12.32 4.31 11.69 4.31 11.3 4.7C10.91 5.09 10.91 5.72 11.3 6.11L16.17 11H5C4.45 11 4 11.45 4 12C4 12.55 4.45 13 5 13Z"></path>
+                                    </svg>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 <script>
     function detectHexCode() {
@@ -187,7 +243,10 @@
             let color = _hexBox.querySelectorAll('.color')[0];
             let colorValue = window.getComputedStyle(color).getPropertyValue('background-color');
             colorValue = colorValue.split("(")[1].split(")")[0];
-            function rgbToHex(rgb) {
+            hexSpace.innerHTML = rgbToHex(colorValue);
+        }
+    }
+    function rgbToHex(rgb) {
                 rgb = rgb.split(",");
                 converted = rgb.map((x) => {
                     x = parseInt(x).toString(16);
@@ -196,9 +255,7 @@
                 converted = "#" + converted.join("");
                 return converted
             }
-            hexSpace.innerHTML = rgbToHex(colorValue);
-        }
-    }
+
     detectHexCode();   
 </script>
 </body>
