@@ -8,7 +8,6 @@
 }
 .body2-minicontainer1, .body2-section2{
     background-color: rgba(255, 255, 255, 0.377);
-
     border: 1px solid white;
     border-radius: 50px;
     width: 920px;
@@ -98,6 +97,46 @@
 .section2-data > .flex-column > *{
     border-left: 1px solid blue;
     padding-left: 1rem;
-    line-height: 10px;
     margin-bottom: 3rem;
 }
+.section2-left :first-child{
+    padding-top: inherit;
+}
+.section2-left > *{
+    margin-top: 1rem;
+}
+.section2-left > .flex{
+    gap: 1rem;
+}
+
+.sibling-link{
+    padding-top: 1rem;
+}
+
+/* ------------section3-------------- */
+
+
+.body2-section3{
+    text-align: center;
+    background: #7444D4;
+    padding: 5rem 0;
+}
+.body2-section3 h2{
+    color: white;
+
+}
+.body2-section3 p{
+    color: white;
+}
+
+.body2-section3 p:first-of-type{
+    margin-top: 1rem;
+}
+.body2-section3 > div:first-of-type{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+.body2-section3 > button {
+ margin: 0 auto;   
+}
+
