@@ -750,6 +750,7 @@ svg {
 }
 .big-card .cta button {
     width: 100%;
+    will-change: opacity;
     transition: opacity .2s ease-in;
 }
 .big-card .cta svg{
