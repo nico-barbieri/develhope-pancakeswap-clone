@@ -429,7 +429,7 @@ a {
             color: var(--secondary);
             fill: var(--secondary);
         }
-        .card-acc-soft-color svg, .card-acc-soft-color span {
+        .card-acc-color svg, .card-acc-color span {
             color: var(--accent);
             fill: var(--accent);
         }
