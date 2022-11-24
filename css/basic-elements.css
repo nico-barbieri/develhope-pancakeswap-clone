@@ -41,7 +41,7 @@
     --cards-border-radius: 1.5rem;
     --cards-padding: 1.5rem;
     --card-h: 17.5rem;
-    --card-w: var(var(--card-h));
+    --card-w: var(--card-h);
 }
   
 :root:has(#dark-mode:checked) {
@@ -200,6 +200,7 @@ a {
             justify-content: center;
             /*Style*/
             height: var(--button-height);
+            width: fit-content;
             padding: var(--button-padding);
             background-color: transparent;
             border: solid 2px var(--accent);
