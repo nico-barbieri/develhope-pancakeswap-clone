@@ -8,6 +8,7 @@
 }
 .body2-minicontainer1, .body2-section2{
     background-color: rgba(255, 255, 255, 0.377);
+
     border: 1px solid white;
     border-radius: 50px;
     width: 920px;
@@ -24,6 +25,7 @@
 }
 .body2-card-container p{
     font-size: 16px;
+
 }
 .body2-left-card {
     background: linear-gradient(180deg, #ffd800, #fdab32);
