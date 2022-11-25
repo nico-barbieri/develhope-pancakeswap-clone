@@ -63,13 +63,20 @@
     box-sizing: border-box;
     /*transition: all .2s ease-in-out;*/
 }
-a {
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a, a:hover, a:active, a:visited {
     color: inherit;
     text-decoration: none;
 }
 svg {
     fill: black;
 }
+
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -512,7 +519,7 @@ svg {
     box-shadow: none;
 }
 /*FAKE BUTTON (links that look like a button)*/
-.fake-button {
+a.fake-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -530,20 +537,20 @@ svg {
     cursor: pointer;
     transition: all 0s;
 }
-.fake-button:hover {
+a.fake-button:hover {
     opacity: .66;
 }
-.fake-button:active {
+a.fake-button:active {
     opacity: .85;
     transform: translateY(1px);
     box-shadow: none;
 }
 /*LINK*/
-.link {
+a.link {
     font: var(--link);
     color: var(--accent);
 }
-.link:hover {
+a.link:hover {
     text-decoration: underline;
 }
 /*MENU BUTTON*/
@@ -709,7 +716,7 @@ svg {
 /*BUTTONS PROPERTIES*/
 /********************/
 /*BIG CARD*/
-.big-card {
+.big-ps-card {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -735,25 +742,25 @@ svg {
     backface-visibility: hidden;
 }
 */
-.big-card .big-card-icon{
+.big-ps-card .big-card-icon{
     text-align: end;
 }
-.big-card .big-card-title {
+.big-ps-card .big-card-title {
     display: flex;
     flex-direction: column;
 }
-.big-card .big-card-title .amount {
+.big-ps-card .big-card-title .amount {
     margin: .75rem 0;
 }
-.big-card .caption {
+.big-ps-card .caption {
     margin: 1rem 0;
 }
-.big-card .cta button {
+.big-ps-card .cta button {
     width: 100%;
     will-change: opacity;
     transition: opacity .2s ease-in;
 }
-.big-card .cta svg{
+.big-ps-card .cta svg{
     fill: var(--primary);
 }
 /*Yellow card*/
@@ -782,7 +789,7 @@ svg {
 }
 
 /*SMALL CARD*/
-.card {
+.ps-card {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
