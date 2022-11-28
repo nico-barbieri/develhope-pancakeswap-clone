@@ -70,6 +70,10 @@ a, a:hover, a:active, a:visited  {
     color: inherit;
     text-decoration: inherit;
 }
+
+body {
+    overflow-y: overlay;
+}
  
 /*Scroll-bar*/
         ::-webkit-scrollbar {

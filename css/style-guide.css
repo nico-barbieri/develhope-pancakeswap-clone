@@ -27,7 +27,7 @@
     --disabled: #666171;
     --card-shadow: #E7E3EB;
     --card-shadow-dark: #383241;
-    --card-background: var(var(--primary)); 
+    --card-background: var(--primary); 
     /*BUTTONS*/
     --main-button-shadow: inset 0px -1px 0px 0px rgb(14 14 44 / 40%);
     --button-border-radius: 1rem;
@@ -43,7 +43,11 @@
     --cards-border-radius: 1.5rem;
     --cards-padding: 1.5rem;
     --card-h: 17.5rem;
-    --card-w: var(var(--card-h));
+    --card-w: var(--card-h);
+    /*ANIMATIONS*/
+    --move-duration: 3.5s;
+    --move-amount: 2%;
+    --star-blink-duration: 2s;
 }
   
 :root:has(#dark-mode:checked) {
@@ -702,13 +706,13 @@ a.link:hover {
             background-color: var(--accent-alert-strong);
             cursor: pointer;
         }
-        .card-box:has(.preview-sec:focus) .card{
+        .card-box:has(.preview-sec:focus) .ps-card{
             --secondary: #7645D9;
         }
-        .card-box:has(.preview-acc:focus) .card{
+        .card-box:has(.preview-acc:focus) .ps-card{
             --secondary: var(--accent);
         }
-        .card-box:has(.preview-acc-strong:focus) .card{
+        .card-box:has(.preview-acc-strong:focus) .ps-card{
             --secondary: var(--accent-alert-strong);
         }
 
@@ -824,4 +828,62 @@ a.link:hover {
 .card-acc-strong-color svg, .card-acc-strong-color span {
     color: var(--accent-alert-strong);
     fill: var(--accent-alert-strong);
+}
+
+/************/
+/*ANIMATIONS*/
+/************/
+
+.animation-box {
+    height: 40vw;
+    width: 40vw;
+    max-width: 36rem;
+    max-height: 36rem;
+    display: flex;
+    position: relative;
+}
+
+.animation-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    animation: var(--move-duration) ease-in-out alternate infinite move;
+}
+
+@keyframes move {
+    0% {
+        transform: translate(var(--move-amount), var(--move-amount));
+    }
+    100% {
+        transform: translate(0rem - var(--move-amount), 0rem - var(--move-amount));
+    }
+}
+
+.astrobunny img:nth-child(2) {
+    top: 5%;
+    left: -10%;
+}
+.astrobunny img:nth-child(10) {
+    top: -12%;
+    left: 3%;
+}
+.astrobunny img:nth-child(12) {
+    top: 0%;
+    left: -20%;
+}
+
+.astrobunny .star {
+    animation: var(--move-duration) ease-in-out alternate infinite move, star-blink var(--star-blink-duration) ease-in-out infinite alternate;
+}
+
+@keyframes star-blink {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
