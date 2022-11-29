@@ -1,0 +1,165 @@
+.footer-wrapper {
+    display: flex;
+    flex-direction: column; 
+    margin: 0px;
+    padding: 0px;
+    font-family: Kanit, sans-serif;
+    padding: 56px 40px 32px;
+    background: #27262C;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ul {
+    padding: 0;
+}
+
+.footer1 {
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.listaa a {
+    text-decoration: none;
+    color: orange;
+}
+
+.lista:first-child {
+    color: #7645D9;
+}
+
+.lista,
+.listaa {
+    list-style-type: none;
+    color: rgb(255, 241, 241);
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.lista>a {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+.listaa {
+    color: red;
+}
+
+.lista>a:hover,
+.listaa>a:hover {
+    text-decoration: underline;
+}
+
+.footer2 {
+    margin-top: 70px;
+    border-bottom: 1px solid #383241;
+    display: flex;
+    padding-bottom: 24px;
+
+}
+.social-container{
+    display: flex;
+    gap:1.1rem;
+}
+.telegram{
+    position: relative;
+}
+
+.tele-lang{
+    display:flex;
+    flex-direction: column;
+    position:absolute;
+    transform: translate(-50%, 0px);
+    left: 50%;
+    bottom: 100%;
+    opacity: 0;
+    pointer-events: none;
+    width: 145px;
+    height: 16rem;
+    overflow-y: scroll;  
+}
+.telegram:hover .tele-lang{ 
+opacity:1;
+pointer-events: all;
+
+}
+.tele-lang a{
+    color:grey;
+    background: rgb(60, 58, 58);
+    text-decoration: none;
+}
+.lang-en, .en{
+    display:flex;
+    position: relative;
+}
+.prima-parte{
+    display:flex;
+    
+}
+.other-lang{
+    display: flex;
+    flex-direction: column;
+    position:absolute;
+    width: max-content;
+    transform: translate(-50%, 0px);
+    left: 100;
+    pointer-events: none;
+    overflow:scroll;
+    padding:16px;
+
+}
+.dropdown:hover{
+ 
+}
+
+
+.footer3{
+    display: flex;
+}
+
+.valore {
+    padding: 0;
+}
+
+.soldi,
+.valore>a {
+    display: inline;
+    color: rgba(151, 129, 129, 0.63);
+    text-decoration: none;
+    align-content: center;
+}
+
+.sc-a8cf5f33-0 {
+    display: inline-flex;
+    font-size: 16px;
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    border: none;
+    height: 32px;
+    border-radius: 16px;
+    padding-left: 25px;
+    align-items: center;
+    background: #53dee9;
+}
+
+.secondaparte {
+    display: flex;
+    margin-top: 20px
+}
+
+ .bunny-icon{
+    align-self: center;
+    margin-right: 2px;
+    padding:0px 10px;
+   transform: scale(100%);
+   transition: all .6s cubic-bezier(0, 3.06, 0.45,-0.85);
+}
+.bunny-icon:hover{
+   transform: scale(110%);
+}

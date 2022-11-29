@@ -709,10 +709,10 @@ a.link:hover {
         .card-box:has(.preview-sec:focus) .ps-card{
             --secondary: #7645D9;
         }
-        .card-box:has(.preview-acc:focus) .ps-card{
+        .card-box:has(.preview-acc:focus) .ps-ps-card{
             --secondary: var(--accent);
         }
-        .card-box:has(.preview-acc-strong:focus) .ps-card{
+        .card-box:has(.preview-acc-strong:focus) .ps-ps-card{
             --secondary: var(--accent-alert-strong);
         }
 
