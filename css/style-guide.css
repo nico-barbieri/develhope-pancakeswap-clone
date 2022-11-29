@@ -46,7 +46,7 @@
     --card-w: var(--card-h);
     /*ANIMATIONS*/
     --move-duration: 3.5s;
-    --move-amount: 3%;
+    --move-amount: 2%;
     --star-blink-duration: 2s;
 }
   
@@ -709,10 +709,10 @@ a.link:hover {
         .card-box:has(.preview-sec:focus) .ps-card{
             --secondary: #7645D9;
         }
-        .card-box:has(.preview-acc:focus) .ps-card{
+        .card-box:has(.preview-acc:focus) .ps-ps-card{
             --secondary: var(--accent);
         }
-        .card-box:has(.preview-acc-strong:focus) .ps-card{
+        .card-box:has(.preview-acc-strong:focus) .ps-ps-card{
             --secondary: var(--accent-alert-strong);
         }
 
@@ -860,19 +860,6 @@ a.link:hover {
     100% {
         transform: translate(0rem - var(--move-amount), 0rem - var(--move-amount));
     }
-}
-
-.astrobunny img:nth-child(2) {
-    top: 5%;
-    left: -10%;
-}
-.astrobunny img:nth-child(10) {
-    top: -12%;
-    left: 3%;
-}
-.astrobunny img:nth-child(12) {
-    top: 0%;
-    left: -20%;
 }
 
 .astrobunny .star {
