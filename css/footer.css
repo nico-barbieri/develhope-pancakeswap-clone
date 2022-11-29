@@ -110,8 +110,8 @@ pointer-events: all;
     left: 100;
     pointer-events: none;
     overflow:scroll;
-    padding:16px;
-
+    height: 15rem;
+    z-index: 10;
 }
 .dropdown:hover{
  
