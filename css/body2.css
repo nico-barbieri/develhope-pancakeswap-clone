@@ -139,4 +139,16 @@
 .body2-section3 > button {
  margin: 0 auto;   
 }
+/* ---------------------- */
+.section4-data> *{
+    border-left: 1px solid blue;
+    padding-left: 1rem;
+    margin-bottom: 3rem;
+    margin-right: 3rem;
+}
+.p12{
+    font-size:12px;
+    font-weight: 800;
+}
+
 
