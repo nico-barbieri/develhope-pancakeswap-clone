@@ -10,7 +10,7 @@
     background-color: rgba(255, 255, 255, 0.377);
     border: 1px solid white;
     border-radius: 50px;
-    width: 920px;
+    width: 1000px;
     margin: 0 auto;
     padding: 3rem 0;
 }
@@ -20,7 +20,7 @@
 }
 .body2-card-container{
     gap: 30px;
-    padding: 0 10rem;
+    padding: 5rem 12rem;
 }
 .body2-card-container p{
     font-size: 16px;
@@ -139,4 +139,16 @@
 .body2-section3 > button {
  margin: 0 auto;   
 }
+/* ---------------------- */
+.section4-data> *{
+    border-left: 1px solid blue;
+    padding-left: 1rem;
+    margin-bottom: 3rem;
+    margin-right: 3rem;
+}
+.p12{
+    font-size:12px;
+    font-weight: 800;
+}
+
 
