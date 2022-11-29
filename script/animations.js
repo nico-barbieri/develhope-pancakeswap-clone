@@ -1,5 +1,5 @@
 const layers = document.querySelectorAll('.animation-layer');
-document.addEventListener('mousemove', parallax);
+window.addEventListener('mousemove', parallax);
 
 layers.forEach(layer => {
     const order = layer.getAttribute('data-layer');
@@ -10,9 +10,9 @@ layers.forEach(layer => {
 function parallax(e){
     layers.forEach(layer => {
         const order = layer.getAttribute('data-layer');
-        const x = (window.innerWidth - e.clientX*order);
-        const y = (window.innerHeight - e.clientY*order);
-        layer.style.left = parseInt(x/200) + 'px';
-        layer.style.top = parseInt(y/300) + 'px';
+        const xMovement = - Math.ceil(e.clientX * order / 200);
+        const yMovement = - Math.ceil(e.clientY * order / 300);
+        layer.style.left = xMovement + 'px';
+        layer.style.top = yMovement + 'px';
     })
 }
