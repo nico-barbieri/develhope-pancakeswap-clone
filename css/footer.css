@@ -162,6 +162,7 @@ pointer-events: all;
 }
 .seconda-parte {
     display: flex;
+
     align-items: center;
    
 }
@@ -175,7 +176,6 @@ pointer-events: all;
 .bunny-icon:hover{
    transform: scale(110%);
 }
-
 
 @media screen and (min-width:576px){
     .footer-wrapper{
