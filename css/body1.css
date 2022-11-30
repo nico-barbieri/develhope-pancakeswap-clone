@@ -1,0 +1,19 @@
+.landing-section{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem 0;
+    background: var(--bg-gradient-1);
+}
+
+.landing-section .title {
+    padding: 1rem 0;
+}
+
+.cta {
+    padding-top: 1rem;
+    gap: 0.5rem;
+}
+
