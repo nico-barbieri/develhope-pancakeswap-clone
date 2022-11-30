@@ -1,20 +1,19 @@
-.b1-container{
+.landing-section{
+    position: relative;
     display: flex;
     justify-content: center;
-    padding-right: 35rem;
-    margin-top: 50px;
+    align-items: center;
+    gap: 1rem;
+    padding: 4rem 0;
+    background: var(--bg-gradient-1);
 }
-.title {
-    padding: 1rem 0 1rem;
+
+.landing-section .title {
+    padding: 1rem 0;
 }
-.sub-title{
-    font-weight: 500;
-    line-height: 1.1;
-}
-.flex {
+
+.cta {
     padding-top: 1rem;
     gap: 0.5rem;
-
-
 }
 

@@ -95,13 +95,13 @@
     justify-content: space-between;
 }
 .section2-data > .flex-column > *{
-    border-left: 1px solid blue;
+    border-left: 1px solid var(--secondary-lightest);
     padding-left: 1rem;
     margin-bottom: 3rem;
 }
-.section2-left :first-child{
+/*.section2-left :first-child{
     padding-top: inherit;
-}
+}*/
 .section2-left > *{
     margin-top: 1rem;
 }
@@ -141,7 +141,7 @@
 }
 /* ---------------------- */
 .section4-data> *{
-    border-left: 1px solid blue;
+    border-left: 1px solid var(--secondary-lightest);
     padding-left: 1rem;
     margin-bottom: 3rem;
     margin-right: 3rem;

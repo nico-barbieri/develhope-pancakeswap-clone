@@ -25,7 +25,7 @@
     --disabled: #666171;
     --card-shadow: #E7E3EB;
     --card-shadow-dark: #383241;
-    --card-background: var(var(--primary)); 
+    --card-background: var(--primary); 
     /*BUTTONS*/
     --main-button-shadow: inset 0px -1px 0px 0px rgb(14 14 44 / 40%);
     --button-border-radius: 1rem;
@@ -35,6 +35,8 @@
     /*GRADIENTS*/
     --gradient-accent-alert-soft: linear-gradient(var(--accent-alert-soft), #FFE76A);
     --gradient-secondary: linear-gradient(var(--secondary), #5121b1);
+    --bg-gradient-1: linear-gradient(140deg,#e6fdff 0%,#f3efff 100%);
+    --bg-gradient-1-dark: radial-gradient(105%50% at 50%50%,#21193a 0%,#191326 100%);
     /*CARDS*/
     --big-card-h: 23rem;
     --big-card-w: 18rem;
@@ -42,12 +44,18 @@
     --cards-padding: 1.5rem;
     --card-h: 17.5rem;
     --card-w: var(--card-h);
+    /*ANIMATIONS*/
+    --move-duration: 3s;
+    --move-amount-x: 2%;
+    --move-amount-y: 2%;
+    --star-blink-duration: 2s;
 }
   
 :root:has(#dark-mode:checked) {
     --primary: var(--primary-darkmode);
     --card-shadow: var(--card-shadow-dark);
     --card-background: var(--background-alt); 
+    --bg-gradient-1: var(--bg-gradient-1-dark);
 }
 
 /******************/
@@ -572,3 +580,15 @@ body {
                 opacity: 1;
             }
         }
+
+
+.divider {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+.divider svg stop{
+    stop-color: var(--primary);
+}
