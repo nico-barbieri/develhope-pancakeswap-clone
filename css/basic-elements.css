@@ -25,7 +25,8 @@
     --disabled: #666171;
     --card-shadow: #E7E3EB;
     --card-shadow-dark: #383241;
-    --card-background: var(--primary); 
+    --card-background: var(--primary);
+    --divider-small-fill: #D8CBED; 
     /*BUTTONS*/
     --main-button-shadow: inset 0px -1px 0px 0px rgb(14 14 44 / 40%);
     --button-border-radius: 1rem;
@@ -37,6 +38,8 @@
     --gradient-secondary: linear-gradient(var(--secondary), #5121b1);
     --bg-gradient-1: linear-gradient(140deg,#e6fdff 0%,#f3efff 100%);
     --bg-gradient-1-dark: radial-gradient(105%50% at 50%50%,#21193a 0%,#191326 100%);
+    --bg-gradient-2: linear-gradient(180deg,#fff 22%,#d7caec 100%);
+    --bg-gradient-2-dark: linear-gradient(180deg,#09070c 22%,#201335 100%);
     /*CARDS*/
     --big-card-h: 23rem;
     --big-card-w: 18rem;
@@ -56,6 +59,8 @@
     --card-shadow: var(--card-shadow-dark);
     --card-background: var(--background-alt); 
     --bg-gradient-1: var(--bg-gradient-1-dark);
+    --bg-gradient-2: var(--bg-gradient-2-dark);
+    --divider-small-fill: #201335; 
 }
 
 /******************/
@@ -582,13 +587,25 @@ body {
         }
 
 
-.divider {
+.divider-big {
     position: absolute;
     bottom: 0;
     width: 100%;
     z-index: 0;
     pointer-events: none;
 }
-.divider svg stop{
+.divider-big svg stop{
     stop-color: var(--primary);
+}
+
+.divider-small {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.divider-small svg {
+    fill: var(--divider-small-fill);
 }

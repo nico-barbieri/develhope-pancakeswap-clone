@@ -1,19 +1,49 @@
-.landing-section{
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    padding: 4rem 0;
-    background: var(--bg-gradient-1);
-}
+/****************/
+/*COMMON CLASSES*/
+/****************/
 
-.landing-section .title {
-    padding: 1rem 0;
-}
+    .cta {
+        padding-top: 1rem;
+        gap: 0.5rem;
+    }
 
-.cta {
-    padding-top: 1rem;
-    gap: 0.5rem;
-}
+    .title {
+        padding: 1rem 0;
+    }
+
+/***********/
+/*SECTION 1*/
+/***********/
+
+    .landing-section{
+        position: relative;
+        gap: 1rem;
+        padding: 4rem 0;
+        background: var(--bg-gradient-1);
+    }
+
+/***********/
+/*SECTION 2*/
+/***********/
+    .section-2 {
+        position: relative;
+        gap: 1rem;
+        padding: 4rem 0;
+        background: var(--bg-gradient-2);
+    }
+    
+    .section-2 .cards-container {
+        gap: 1rem;
+    }
+/***********/
+/*SECTION 3*/
+/***********/
+    .section-3 {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        padding: 4rem 0;
+    }
 
