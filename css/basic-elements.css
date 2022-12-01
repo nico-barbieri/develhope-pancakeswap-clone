@@ -40,6 +40,10 @@
     --bg-gradient-1-dark: radial-gradient(105%50% at 50%50%,#21193a 0%,#191326 100%);
     --bg-gradient-2: linear-gradient(180deg,#fff 22%,#d7caec 100%);
     --bg-gradient-2-dark: linear-gradient(180deg,#09070c 22%,#201335 100%);
+    --bg-gradient-3: linear-gradient(110deg,#f2ecf2,#e8f2f6);
+    --bg-gradient-3-dark: linear-gradient(165deg,#3b4155,#3a3045);
+    --bg-gradient-4: linear-gradient(180deg,#6fb6f1 0%,#eaf2f6 100%);
+    --bg-gradient-4-dark: linear-gradient(180deg,#0b4576 0%,#091115 100%);
     /*CARDS*/
     --big-card-h: 23rem;
     --big-card-w: 18rem;
@@ -52,6 +56,9 @@
     --move-amount-x: 2%;
     --move-amount-y: 2%;
     --star-blink-duration: 2s;
+    /*SECTIONS*/
+    --section-max-w: 62.5rem;
+    --divider-small-h: 2rem;
 }
   
 :root:has(#dark-mode:checked) {
@@ -60,6 +67,8 @@
     --card-background: var(--background-alt); 
     --bg-gradient-1: var(--bg-gradient-1-dark);
     --bg-gradient-2: var(--bg-gradient-2-dark);
+    --bg-gradient-3: var(--bg-gradient-3-dark);
+    --bg-gradient-4: var(--bg-gradient-4-dark);
     --divider-small-fill: #201335; 
 }
 
@@ -599,7 +608,7 @@ body {
     stop-color: var(--primary);
 }
 
-.divider-small {
+.divider-small-up {
     position: absolute;
     top: 0;
     width: 100%;
@@ -607,6 +616,22 @@ body {
     pointer-events: none;
 }
 
-.divider-small svg {
+.divider-small-up svg {
     fill: var(--divider-small-fill);
+    height: var(--divider-small-h);
+}
+
+.divider-small-down {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    pointer-events: none;
+    transform: translateY(calc(100% - 2px));
+}
+
+.divider-small-down svg {
+    fill: var(--primary);
+    scale: -1 1;
+    height: var(--divider-small-h);
 }
