@@ -203,7 +203,7 @@
         position: relative;
         gap: 1rem;
         padding: 4rem 0;
-        background: var(--bg-gradient-3);
+        background: var(--primary);
     }
     .section-6-wrapper {
         max-width: var(--section-max-w);
