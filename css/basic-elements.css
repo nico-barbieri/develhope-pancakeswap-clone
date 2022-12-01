@@ -7,8 +7,10 @@
     --title: 600 64px / 70.4px 'Kanit';
     --sub-title: 600 20px / 22px 'Kanit';
     --small-title: 600 40px / 44px 'Kanit';
+    --smaller-title: 600 12px / 18px 'Kanit';
     --paragraph: 400 16px / 24px 'Kanit';
     --link: 600 16px / 1 'Kanit';
+    --big-data: 600 24px / 26px 'Kanit';
     /*COLOURS*/
     --primary: #FFFFFF;
     --primary-static: #FFFFFF;
@@ -44,6 +46,7 @@
     --bg-gradient-3-dark: linear-gradient(165deg,#3b4155,#3a3045);
     --bg-gradient-4: linear-gradient(180deg,#6fb6f1 0%,#eaf2f6 100%);
     --bg-gradient-4-dark: linear-gradient(180deg,#0b4576 0%,#091115 100%);
+    --bg-gradient-5: linear-gradient(rgb(118, 69, 217) 0%, rgb(81, 33, 177) 100%);
     /*CARDS*/
     --big-card-h: 23rem;
     --big-card-w: 18rem;
@@ -129,6 +132,9 @@ body {
             font: var(--small-title);
             color: var(--secondary-darker);
         }
+        .smaller-title {
+            font: var(--smaller-title);
+        }
         .sub-title {
             font: var(--sub-title);
             color: var(--secondary-darker);
@@ -139,6 +145,9 @@ body {
         }
         .paragraph-bold {
             font: var(--link);
+        }
+        .big-data {
+            font: var(--big-data);
         }
 
 /*DARK MODE*/
@@ -158,6 +167,10 @@ body {
 /********/
 
         /*Font color*/
+
+        .color-primary-darker {
+            color: var(--primary-darker);
+        }
         .color-sec {
             color: var(--secondary);
         }
