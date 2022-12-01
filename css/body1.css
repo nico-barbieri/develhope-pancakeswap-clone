@@ -114,3 +114,117 @@
         transition: all .3s ease-in-out;
     }
 
+/***********/
+/*SECTION 5*/
+/***********/
+
+    .body2-container{
+        position: relative;
+        overflow: hidden;
+        background: var(--bg-gradient-4);
+        padding: 6rem 0;
+        z-index: 0;
+    }
+
+    .balls {
+        position: absolute;
+        top: 0;
+        right: -2.25rem;
+        z-index: -2;
+        pointer-events: none;
+    }
+
+    .tickets {
+        position: absolute;
+        bottom: 0;
+        left: -1.5rem;
+        z-index: -2;
+        pointer-events: none;
+    }
+
+    .body2-minicontainer1 {
+        backdrop-filter: blur(12px);
+        border: 1px solid var(--card-background);
+        border-radius: 50px;
+        max-width: var(--section-max-w);
+        margin: 0 auto;
+        padding: 2rem;
+        gap: 2rem;
+        pointer-events: all;
+    }
+
+    .body2-minicontainer1::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        border-radius: 50px;
+        background: var(--primary);
+        opacity: .5;
+        z-index: -1;
+        pointer-events: none;
+    }
+    
+    .body2-card-container{
+        gap: 2rem;
+    }
+    .body2-card-container p{
+        font-size: 16px;
+    
+    }
+    .body2-left-card {
+        background: linear-gradient(180deg, #ffd800, #fdab32);
+        width: 310px;
+        color: #280D5F;
+        transform: rotate(-3deg);
+    
+    }
+    .body2-right-card{
+        background : linear-gradient(#87a7ee,#7645d9);
+        width: 310px;
+        color: black;
+        transform: rotate(3deg);
+    
+    
+    }
+    .body2-card{
+        border-radius: 20px;
+        padding: 1rem 1rem;
+    }
+    .body2-icon{
+        text-align: end;
+    }
+    .card-header{
+        line-height: 10px;
+        margin-bottom: 2rem;
+    } 
+    .card-header p{
+        font-weight: 600;
+    }
+    .card-main p{
+        font-weight: 400;
+        margin-bottom: 2rem;
+    }
+    .body2-minicontainer1 h2 {
+        font-weight: 600;
+        font-size: 40px;
+    }
+    .card-button{
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    .card-button button{
+        width: 90%;
+        height: 3rem;
+        border-radius:20px;
+        display: flex;
+        justify-content: center;
+        line-height:3rem;
+        gap: 1rem;
+    }
+    .card-button button img{ 
+        width: 20px;
+        height: 2.7rem;
+    }
