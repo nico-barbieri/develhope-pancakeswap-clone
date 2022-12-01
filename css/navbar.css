@@ -1,0 +1,35 @@
+nav{
+    background-color: #27262c;
+    color: white;
+}
+
+.navTitle{
+font-family: 'Kanit';
+color: white;
+}
+.navLink{
+color: #b8add2;
+}
+.navLink:hover{
+    color: #9a6ae4;
+    background-color: green;
+    border-radius: 1rem;
+}
+
+.rotondo{
+    border-radius: 1.5rem;
+    background-color: #27262c;
+    color: white;
+}
+
+.Push-color{
+    background-color: #1FC7D4;
+}
+
+hr{
+    border: none;
+    height: 1px;
+    background-color: white;
+
+}
+
