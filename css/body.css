@@ -262,3 +262,29 @@
         right: -4rem;      
     }
     
+/********/
+/*LOADER*/
+/********/
+    .loader-wrapper{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--bg-gradient-5);
+        z-index: 100;
+        transition: opacity .3s ease-in-out 0s, display 0s .5s;
+    }
+    .loader-wrapper img {
+        scale: .75;
+    }
+
+    .faded {
+        opacity: 0;
+        display: none;
+    }

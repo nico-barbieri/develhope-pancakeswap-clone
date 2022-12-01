@@ -97,7 +97,7 @@ a, a:hover, a:active, a:visited  {
 }
 
 body {
-    overflow-y: overlay;
+    overflow-y: hidden;
 }
  
 /*Scroll-bar*/
