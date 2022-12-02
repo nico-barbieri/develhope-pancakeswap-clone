@@ -91,7 +91,7 @@ p {
     margin-bottom: 0;
 }
 
-a, a:hover, a:active, a:visited  {
+a, a:hover, a:active, a:focus {
     color: inherit;
     text-decoration: inherit;
 }
@@ -139,7 +139,7 @@ body {
             font: var(--sub-title);
             color: var(--secondary-darker);
         }
-        .paragraph {
+        .paragraph, .paragraph:hover, .paragraph:focus, .paragraph:active {
             font: var(--paragraph);
             color: var(--secondary-lighter);
         }

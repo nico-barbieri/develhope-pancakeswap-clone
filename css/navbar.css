@@ -1,29 +1,30 @@
 nav{
-    background-color: #27262c;
-    color: white;
+    background-color: var(--primary);
 }
 
-.navTitle{
-font-family: 'Kanit';
-color: white;
+:root:has(#dark-mode:checked) nav {
+    --primary: var(--background-alt);
+    --primary-darker: var(--card-shadow-dark); /*#353547*/
 }
-.navLink{
-color: #b8add2;
-}
-.navLink:hover{
-    color: #9a6ae4;
-    background-color: green;
+.ps-nav-link {
     border-radius: 1rem;
+    display: block;
+    padding: .5rem 1rem;
+    text-decoration: none;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
+}
+.ps-nav-link:hover{
+    background-color: var(--primary-darker);
+}
+
+.dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus {
+    background-color: var(--primary-darker);
 }
 
 .rotondo{
     border-radius: 1.5rem;
-    background-color: #27262c;
+    background-color: var(--primary);
     color: white;
-}
-
-.Push-color{
-    background-color: #1FC7D4;
 }
 
 hr{
