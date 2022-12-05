@@ -1,0 +1,144 @@
+/***********/
+/*SECTION 4*/
+/***********/
+.section-4 {
+    position: relative;
+    gap: 1rem;
+    padding: 4rem 0;
+    background: var(--bg-gradient-3);
+
+    .section-4-wrapper {
+        max-width: var(--section-max-w);
+        margin: 0 auto;
+    }
+    .data-section {
+        width: 100%;
+
+        .data-title {
+            h4 {
+                margin: 0;
+            }
+    
+            button {
+                height: 1.5rem;
+                padding: 0 .5rem;
+                border: none;
+                outline: none;
+                background-color: transparent;
+                transition: all .2s ease-in;
+    
+                &:hover {
+                    opacity: .6;
+                }
+    
+                svg {
+                    fill: var(--primary-darkmode);
+                    height: 100%;
+                }
+            }
+        }
+
+        .data-container {
+            position: relative;
+            width: 100%;
+            height: 4rem;
+
+            .data{
+                width: 100%;
+                justify-content: space-between;
+
+                & > *:not(:first-child){
+                    border-left: 1px solid var(--secondary-lightest);
+                    padding-left: 1rem;
+                    margin-bottom: 3rem;
+                }
+            }
+
+            .show-data {
+                opacity: 1;
+                position: absolute;
+                transition: all .3s ease-in-out;
+            }
+
+            .hyde-data {
+                opacity: 0;
+                pointer-events: none;
+                position: absolute;
+                transform: translateY(3rem);
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+}
+
+:root:has(#dark-mode:checked) .data-title button svg {
+    fill: var(--secondary-lightest);
+}
+
+/***********/
+/*SECTION 5*/
+/***********/
+.section-5 {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-gradient-4);
+    padding: 6rem 0;
+    z-index: 0;
+
+    .section-5-wrapper {
+        margin: 0 auto;
+        max-width: var(--section-max-w);
+
+        .glass {
+            backdrop-filter: blur(10px);
+            box-shadow: inset 0px 1px 4px -2px var(--card-background);
+            border-radius: 4.5rem;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2.5rem;
+            gap: 2rem;
+            pointer-events: all;
+
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0;
+                left: auto;
+                height: 100%;
+                width: 100%;
+                border-radius: 4.5rem;
+                background: var(--primary);
+                opacity: .33;
+                z-index: -1;
+                pointer-events: none;
+            }
+
+            .big-cards-container{
+                gap: 2rem;
+            }
+        }
+    }
+    
+    .balls {
+        position: absolute;
+        top: 0;
+        right: -2.25rem;
+        z-index: -2;
+        pointer-events: none;
+    }
+    
+    .tickets {
+        position: absolute;
+        bottom: 0;
+        left: -1.5rem;
+        z-index: -2;
+        pointer-events: none;
+    }
+}
+
+
+
+
+
+
+
