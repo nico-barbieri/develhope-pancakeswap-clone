@@ -36,6 +36,9 @@
         padding: 1rem 0;
     }
 
+
+
+
 /***********/
 /*SECTION 2*/
 /***********/
@@ -51,6 +54,7 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+
 
 /***********/
 /*SECTION 3*/
@@ -69,6 +73,8 @@
         max-width: var(--section-max-w);
         margin: 0 auto;
     }
+
+
 
 /***********/
 /*SECTION 4*/
@@ -235,7 +241,7 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: url(../res/graphics/rays.svg) no-repeat center;
+        background: url(../res/graphics/rays.svg)  center;
         background-size: cover;
         -webkit-background-size: cover;
         -moz-background-size: cover;
