@@ -1,3 +1,45 @@
+
+/* section 1 */  
+.landing-section{
+        position: relative;
+        gap: 1rem;
+        padding: 4rem 0;
+        background: var(--bg-gradient-1);
+
+    .landing-section-wrapper {
+        height: 100%;
+    title {
+        padding: 1rem 0;
+    }
+}
+}
+/* section 2 */ 
+.section-2 {
+    position: relative;
+    gap: 2rem;
+    padding: 4rem 0;
+    background: var(--bg-gradient-2);
+    .cards-container {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* section 3 */ 
+.section-3 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    padding: 6rem 0;
+    background: var(--primary);
+    .section-3-wrapper {
+        max-width: var(--section-max-w);
+        margin: 0 auto;
+    }
+}
+
 /***********/
 /*SECTION 4*/
 /***********/
