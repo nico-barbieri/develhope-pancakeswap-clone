@@ -139,8 +139,11 @@ body {
             font: var(--sub-title);
             color: var(--secondary-darker);
         }
-        .paragraph, .paragraph:hover, .paragraph:focus, .paragraph:active {
+        .paragraph {
             font: var(--paragraph);
+            color: var(--secondary-lighter);
+        }
+        .paragraph:hover, .paragraph:focus, .paragraph:active {
             color: var(--secondary-lighter);
         }
         .paragraph-bold {
@@ -169,41 +172,41 @@ body {
         /*Font color*/
 
         .color-primary-darker {
-            color: var(--primary-darker);
+            color: var(--primary-darker) !important;
         }
         .color-sec {
-            color: var(--secondary);
+            color: var(--secondary) !important;
         }
         .color-acc {
-            color: var(--accent);
+            color: var(--accent) !important;
         }
         .color-acc-soft {
-            color: var(--accent-alert-soft);
+            color: var(--accent-alert-soft) !important;
         }
         .color-acc-strong {
-            color: var(--accent-alert-strong);
+            color: var(--accent-alert-strong) !important;
         }
         /*Bg color*/
         .bg-color-prim {
-            background: var(--primary);
+            background: var(--primary) !important;
         }
         .bg-color-prim-darker {
-            background: var(--primary-darker);
+            background: var(--primary-darker) !important;
         }
         .bg-color-dark {
-            background: var(--background-alt);
+            background: var(--background-alt) !important;
         }
         .bg-color-sec {
-            background: var(--secondary);
+            background: var(--secondary) !important;
         }
         .bg-color-acc {
-            background: var(--accent);
+            background: var(--accent) !important;
         }
         .bg-color-acc-soft {
-            background: var(--accent-alert-soft);
+            background: var(--accent-alert-soft) !important;
         }
         .bg-color-acc-strong {
-            background: var(--accent-alert-strong);
+            background: var(--accent-alert-strong) !important;
         }
 
 /********************/
@@ -508,6 +511,7 @@ body {
             height: 100%;
             width: 100%;
             animation: var(--move-duration) ease-in-out alternate infinite move;
+            pointer-events: none;
         }
 
         .astrobunny {
