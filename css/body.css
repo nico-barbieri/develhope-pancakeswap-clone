@@ -1,0 +1,224 @@
+/* section 1 */
+.landing-section {
+  position: relative;
+  gap: 1rem;
+  padding: 4rem 0;
+  background: var(--bg-gradient-1);
+}
+.landing-section .landing-section-wrapper {
+  height: 100%;
+}
+.landing-section .landing-section-wrapper title {
+  padding: 1rem 0;
+}
+
+/* section 2 */
+.section-2 {
+  position: relative;
+  gap: 2rem;
+  padding: 4rem 0;
+  background: var(--bg-gradient-2);
+}
+.section-2 .cards-container {
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* section 3 */
+.section-3 {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 6rem 0;
+  background: var(--primary);
+}
+.section-3 .section-3-wrapper {
+  max-width: var(--section-max-w);
+  margin: 0 auto;
+}
+
+/*SECTION 4*/
+
+.section-4 {
+  position: relative;
+  gap: 1rem;
+  padding: 4rem 0;
+  background: var(--bg-gradient-3);
+}
+.section-4 .section-4-wrapper {
+  max-width: var(--section-max-w);
+  margin: 0 auto;
+}
+.section-4 .data-section {
+  width: 100%;
+}
+.section-4 .data-section .data-title h4 {
+  margin: 0;
+}
+.section-4 .data-section .data-title button {
+  height: 1.5rem;
+  padding: 0 0.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  transition: all 0.2s ease-in;
+}
+.section-4 .data-section .data-title button:hover {
+  opacity: 0.6;
+}
+.section-4 .data-section .data-title button svg {
+  fill: var(--primary-darkmode);
+  height: 100%;
+}
+.section-4 .data-section .data-container {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+}
+.section-4 .data-section .data-container .data {
+  width: 100%;
+  justify-content: space-between;
+}
+.section-4 .data-section .data-container .data > *:not(:first-child) {
+  border-left: 1px solid var(--secondary-lightest);
+  padding-left: 1rem;
+  margin-bottom: 3rem;
+}
+.section-4 .data-section .data-container .show-data {
+  opacity: 1;
+  position: absolute;
+  transition: all 0.3s ease-in-out;
+}
+.section-4 .data-section .data-container .hyde-data {
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateY(3rem);
+  transition: all 0.3s ease-in-out;
+}
+
+:root:has(#dark-mode:checked) .data-title button svg {
+  fill: var(--secondary-lightest);
+}
+
+
+/*SECTION 5*/
+
+.section-5 {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-gradient-4);
+  padding: 6rem 0;
+  z-index: 0;
+}
+.section-5 .section-5-wrapper {
+  margin: 0 auto;
+  max-width: var(--section-max-w);
+}
+.section-5 .section-5-wrapper .glass {
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  box-shadow: inset 0px 1px 4px -2px var(--card-background);
+  border-radius: 4.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem;
+  gap: 2rem;
+  pointer-events: all;
+}
+.section-5 .section-5-wrapper .glass::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: auto;
+  height: 100%;
+  width: 100%;
+  border-radius: 4.5rem;
+  background: var(--primary);
+  opacity: 0.33;
+  z-index: -1;
+  pointer-events: none;
+}
+.section-5 .section-5-wrapper .glass .big-cards-container {
+  gap: 2rem;
+}
+.section-5 .balls {
+  position: absolute;
+  top: 0;
+  right: -2.25rem;
+  z-index: -2;
+  pointer-events: none;
+}
+.section-5 .tickets {
+  position: absolute;
+  bottom: 0;
+  left: -1.5rem;
+  z-index: -2;
+  pointer-events: none;
+}
+
+
+/*SECTION 6*/
+
+.section-6 {
+  position: relative;
+  gap: 1rem;
+  padding: 4rem 0;
+  background: var(--primary);
+}
+.section-6 .section-6-wrapper {
+  max-width: var(--section-max-w);
+  margin: 0 auto;
+}
+.section-6 .section-6 .data {
+  width: 100%;
+  justify-content: space-between;
+}
+.section-6 > :not(:first-child) > * {
+  border-left: 1px solid var(--secondary-lightest);
+  padding-left: 1rem;
+}
+
+
+/*SECTION 7*/
+
+.section-7 {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-gradient-5);
+}
+.section-7::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../res/graphics/rays.svg) no-repeat center;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  pointer-events: none;
+}
+.section-7 .section-7-wrapper {
+  position: relative;
+  max-width: var(--section-max-w);
+  padding: 6rem 0;
+  margin: 0 auto;
+}
+.section-7 .moving-pancakes-top-l {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  left: -4rem;
+}
+.section-7 .moving-pancakes-bottom-r {
+  position: absolute;
+  pointer-events: none;
+  bottom: 0;
+  right: -4rem;
+}/*# sourceMappingURL=body.css.map */
