@@ -511,6 +511,7 @@ body {
             height: 100%;
             width: 100%;
             animation: var(--move-duration) ease-in-out alternate infinite move;
+            pointer-events: none;
         }
 
         .astrobunny {
