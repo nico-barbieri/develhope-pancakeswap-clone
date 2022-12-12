@@ -21,8 +21,43 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <main>
+        <div class="small-menu">
+            <div class="button-wrapper d-flex justify-content-center align-items-center gap-5">
+                <a href="#" class="paragraph">Swap</a>
+                <a href="#" class="paragraph">Limit</a>
+                <a href="#" class="paragraph">Liquidity</a>
+                <a href="#" class="paragraph">Perpetual</a>
+                <a href="#" class="paragraph">Bridge</a>
+            </div>
+        </div>
+        <div class="trading-window">
+            <div class="trading-window-wrapper d-flex gap-4">
+                <div class="graph">
 
-    
-    
+                </div>
+                <div class="trade d-flex flex-column">
+                    <div class="trade-header d-flex flex-column gap-3">
+                        <div class="text-box d-flex flex-column gap-2">
+                            <h3 class="sub-title">Swap</h3>
+                            <p class="paragraph">Trade tokens in an istant</p>
+                        </div>
+                        <div class="trade-buttons d-flex justify-content-end gap-3">
+                            <button class="trade-button">1</button>
+                            <button class="trade-button">2</button>
+                            <button class="trade-button">3</button>
+                            <button class="trade-button">4</button>
+                            <button class="trade-button">5</button>
+                        </div>
+                    </div>
+                    <form class="trade-form d-flex flex-column gap-3">
+                        <input type="text" class="sell">
+                        <input type="text" class="buy">
+                        <button class="main-button">Connect Wallet</button>
+                    </form> 
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 </html>
