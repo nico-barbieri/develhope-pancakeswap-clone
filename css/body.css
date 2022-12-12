@@ -40,8 +40,9 @@
   margin: 0 auto;
 }
 
+/***********/
 /*SECTION 4*/
-
+/***********/
 .section-4 {
   position: relative;
   gap: 1rem;
@@ -104,9 +105,9 @@
   fill: var(--secondary-lightest);
 }
 
-
+/***********/
 /*SECTION 5*/
-
+/***********/
 .section-5 {
   position: relative;
   overflow: hidden;
@@ -160,9 +161,9 @@
   pointer-events: none;
 }
 
-
+/***********/
 /*SECTION 6*/
-
+/***********/
 .section-6 {
   position: relative;
   gap: 1rem;
@@ -173,18 +174,18 @@
   max-width: var(--section-max-w);
   margin: 0 auto;
 }
-.section-6 .section-6 .data {
+.section-6 .data {
   width: 100%;
   justify-content: space-between;
 }
-.section-6 > :not(:first-child) > * {
+.section-6 .data > :not(:first-child) > * {
   border-left: 1px solid var(--secondary-lightest);
   padding-left: 1rem;
 }
 
-
+/***********/
 /*SECTION 7*/
-
+/***********/
 .section-7 {
   position: relative;
   overflow: hidden;
