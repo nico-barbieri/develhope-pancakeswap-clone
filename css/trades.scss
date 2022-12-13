@@ -1,4 +1,4 @@
-$small-menu-h: 3rem;
+$small-menu-h: 2.5rem;
 $trade-w: 20.5rem;
 
 main {
@@ -7,6 +7,40 @@ main {
 
         .button-wrapper {
             height: 100%;
+
+            a {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                transition: all .1s ease-in-out;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    height: .25rem;
+                    width: 0%;
+                    bottom: 0;
+                    border-radius: 2px;
+                    background: var(--accent);
+                    transition: all .2s ease-in-out;
+                }
+
+                &.active {
+                    color: var(--secondary);
+
+                    /*fake a font-weight grow to avoid flickering (and without setting a fixed width on "a"*/
+                    text-shadow: -.33px -.33px 0 var(--secondary),
+                                .33px -.33px 0 var(--secondary),
+                                -.33px .33px 0 var(--secondary),
+                                .33px .33px 0 var(--secondary);
+    
+                    &::after{
+                        width: 120%;
+                    }
+                }
+            }
         }
     }
     .trading-window {
@@ -19,12 +53,21 @@ main {
             margin: 0 auto;
 
             .graph {
+                display: flex;
+                background-color: black;
                 width: 100%;
-                flex: 1;
+                transition: opacity .2s .3s, width .3s 0s;
+
+                &.hide {
+                    width: 0%;
+                    opacity: 0;
+                    transition: opacity .15s 0s, width .3s 0s;
+                    pointer-events: none;
+                }
             }
             .trade {
                 justify-content: space-between;
-                width: $trade-w;
+                min-width: $trade-w;
                 border: solid 1px var(--card-shadow);
                 border-radius: var(--cards-border-radius);
                 background: var(--card-background);
@@ -33,6 +76,18 @@ main {
                 .trade-header {
                     border-bottom: 1px solid var(--card-shadow);
                     padding: var(--cards-padding);
+
+                    .trade-buttons {
+                        .trade-button {
+                            background: transparent;
+                            height: 1.5rem;
+                            width: 1.5rem;
+
+                            &:hover {
+                                opacity: .66;
+                            }
+                        }
+                    }
                 }
 
                 .trade-form {
