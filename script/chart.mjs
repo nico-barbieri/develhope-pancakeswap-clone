@@ -1,7 +1,7 @@
 let $swapGraph = document.getElementById('swap-graph').getContext("2d");
 
 let chartData = []; //empty array of data which will be filled randomly with simulateData()
-let gradient = $swapGraph.createLinearGradient(0, 0, 0, 400);
+let gradient = $swapGraph.createLinearGradient(0, 0, 0, 250);
 
 // starting from value, return a value in the range [value - range/2, value + range/2]
 let randomSum = (value, range = 10) => {
@@ -49,7 +49,7 @@ const data = {
     datasets: [{
         label: 'BNB/CAKE',
         data: chartData,
-        backgroundColor: updateGradient(gradient, .6, 0),
+        backgroundColor: updateGradient(gradient, .5, 0),
         borderColor: redOrGreen(chartData),
         borderWidth: 2,
     }],
