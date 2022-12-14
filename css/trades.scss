@@ -54,16 +54,18 @@ main {
 
             .graph {
                 display: flex;
-                background-color: black;
+                background-color: transparent;
                 width: 100%;
-                transition: opacity .2s .3s, width .3s 0s;
+                /*height: 32.5rem;*/
+                transition: opacity .15s .3s, width .3s ease-in-out 0s;
 
                 &.hide {
                     width: 0%;
                     opacity: 0;
-                    transition: opacity .15s 0s, width .3s 0s;
+                    transition: opacity .15s 0s, width .3s ease-in-out 0s;
                     pointer-events: none;
                 }
+
             }
             .trade {
                 justify-content: space-between;

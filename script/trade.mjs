@@ -1,9 +1,7 @@
-import { svg } from "./icons.mjs";
+import { buttons } from "./buttons.mjs";
+import { swapChart } from "./chart.mjs";
 
-const $swapGraph = document.querySelector('#swap-graph')
-const $tradeMenuBtn = document.querySelectorAll(".small-menu-button")
-const $graph = document.querySelector("#toggle-graph");
-let graphIsHidden = false;
+const $tradeMenuBtn = document.querySelectorAll(".small-menu-button");
 
 for (let i = 0; i < $tradeMenuBtn.length; i++) {
     $tradeMenuBtn[i].addEventListener('click', (event) => {
@@ -15,14 +13,12 @@ for (let i = 0; i < $tradeMenuBtn.length; i++) {
     })
 }
 
-$graph.addEventListener('click', ()=>{
-    if (!graphIsHidden) {
-        $graph.innerHTML = svg.$showGraph;
-        $swapGraph.classList.toggle('hide')
-        graphIsHidden = true;
-    } else {
-        $graph.innerHTML = svg.$hideGraph;
-        $swapGraph.classList.toggle('hide')
-        graphIsHidden = false;
-    }
-})
+for (const btnName in buttons) {
+    buttons[btnName].$button.addEventListener('click', () => {
+        buttons[btnName].$window?.classList.toggle('hide');
+        buttons[btnName].$button.innerHTML = buttons[btnName].open
+                                            ? buttons[btnName].svg.close 
+                                            : buttons[btnName].svg.open;
+        buttons[btnName].open = !buttons[btnName].open;
+    })
+}

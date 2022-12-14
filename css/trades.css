@@ -41,14 +41,15 @@ main .trading-window .trading-window-wrapper {
 }
 main .trading-window .trading-window-wrapper .graph {
   display: flex;
-  background-color: black;
+  background-color: transparent;
   width: 100%;
-  transition: opacity 0.2s 0.3s, width 0.3s 0s;
+  /*height: 32.5rem;*/
+  transition: opacity 0.15s 0.3s, width 0.3s ease-in-out 0s;
 }
 main .trading-window .trading-window-wrapper .graph.hide {
   width: 0%;
   opacity: 0;
-  transition: opacity 0.15s 0s, width 0.3s 0s;
+  transition: opacity 0.15s 0s, width 0.3s ease-in-out 0s;
   pointer-events: none;
 }
 main .trading-window .trading-window-wrapper .trade {

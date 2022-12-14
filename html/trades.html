@@ -33,8 +33,10 @@
         </div>
         <div class="trading-window p-5">
             <div class="trading-window-wrapper d-flex justify-content-center gap-4">
-                <div class="graph" id="swap-graph">
+                <div class="graph" id="swap-graph-container">
+                    <canvas id="swap-graph">
 
+                    </canvas>
                 </div>
                 <div class="trade d-flex flex-column">
                     <div class="trade-header d-flex flex-column gap-3">
@@ -71,5 +73,10 @@
     </main>
 
     <script type="module" src="../script/trade.mjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script>
 </body>
 </html>
