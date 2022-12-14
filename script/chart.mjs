@@ -51,7 +51,7 @@ const data = {
         data: chartData,
         backgroundColor: updateGradient(gradient, .6, 0),
         borderColor: redOrGreen(chartData),
-        borderWidth: 3,
+        borderWidth: 2,
     }],
 }
 
@@ -72,7 +72,8 @@ const config = {
                 beginAtZero: false,
                 grid:  {
                     display: false,
-                }
+                },
+                display: false,
             }
         },
         tension: .1, 

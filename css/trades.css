@@ -41,7 +41,11 @@ main .trading-window .trading-window-wrapper {
 }
 main .trading-window .trading-window-wrapper .graph {
   display: flex;
-  background-color: transparent;
+  padding: var(--cards-padding);
+  border: solid 1px var(--card-shadow);
+  border-radius: var(--cards-border-radius);
+  background: var(--card-background);
+  box-shadow: 0px 2px 0px 0px var(--card-shadow);
   width: 100%;
   /*height: 32.5rem;*/
   transition: opacity 0.15s 0.3s, width 0.3s ease-in-out 0s;
