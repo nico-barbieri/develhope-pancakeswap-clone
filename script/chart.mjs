@@ -2,11 +2,22 @@ let $swapGraph = document.getElementById('swap-graph').getContext("2d");
 
 let chartData = []; //empty array of data which will be filled randomly with simulateData()
 let gradient = $swapGraph.createLinearGradient(0, 0, 0, 250);
+let delayed;
 
 // starting from value, return a value in the range [value - range/2, value + range/2]
 let randomSum = (value, range = 10) => {
     value += Math.random() * range - (range/2);
     return value
+}
+
+let getMinValue = (data) => {
+    return Math.min(...data.map(obj => obj.y));
+}
+let getMaxValue = (data) => {
+    return Math.max(...data.map(obj => obj.y));
+}
+let valuesRange = (data) => {
+    return getMaxValue(data) - getMinValue(data);
 }
 
 //randomly fill chartData
@@ -57,23 +68,28 @@ const data = {
 
 // chart settings
 const config = {
-    type: 'line',
+    type: 'line', //chart type
     data,
     options: {
+        // axes
         scales: {
             x: {
                 parsing: true,
                 type: 'time',
+                //bg grid settings (in this case, it's hidden)
                 grid:  {
                     display: false,
                 }
             },
             y: {
-                beginAtZero: false,
+                suggestedMin: Math.round(getMinValue(chartData) - (valuesRange(chartData)/3)),
+                suggestedMax: Math.round(getMaxValue(chartData) + (valuesRange(chartData)/6)),
+                //bg grid settings (in this case, it's hidden)
                 grid:  {
                     display: false,
                 },
-                display: false,
+                //y axis is hidden
+                display: true,
             }
         },
         tension: .1, 
@@ -82,9 +98,33 @@ const config = {
             point: {
                 radius: 0,
             }
-        }
+        },
+
+        //delay animation on chart render 
+        //https://www.chartjs.org/docs/latest/samples/animations/delay.html
+
+        animation: {
+            onComplete: () => {
+              delayed = true;
+            },
+            delay: (context) => {
+              let delay = 0;
+              if (context.type === 'data' && context.mode === 'default' && !delayed) {
+                delay = context.dataIndex * 50 + context.datasetIndex * 50;
+              }
+              return delay;
+            },
+          },
     }
 }
 
 //render chart
 export const swapChart = new Chart($swapGraph, config)
+
+console.log(`min: ${getMinValue(chartData)}
+max: ${getMaxValue(chartData)}
+range: ${valuesRange(chartData)}
+min y: ${Math.round(getMinValue(chartData) - (valuesRange(chartData)/3))}
+max y: ${Math.round(getMaxValue(chartData) + (valuesRange(chartData)/6))}
+`
+);
