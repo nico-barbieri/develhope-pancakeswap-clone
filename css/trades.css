@@ -33,7 +33,8 @@ main .small-menu .button-wrapper a.active::after {
 main .trading-window {
   background: linear-gradient(140deg, #e5fdff, #f3efff);
   width: 100vw;
-  height: calc(100vh - 2.5rem); /*viewport height - navbar height - small menu height*/
+  height: calc(100vh - 2.5rem);
+  /*viewport height - navbar height - small menu height*/
 }
 main .trading-window .trading-window-wrapper {
   max-width: var(--section-max-w);
@@ -95,7 +96,35 @@ main .trading-window .trading-window-wrapper .graph .time-range-selection .time-
   scale: 1;
   transition: cubic-bezier(0, 0.5, 0.5, 1.5) 0.2s;
 }
-main .trading-window .trading-window-wrapper .trade {
+main .trading-window .trading-window-wrapper .graph .chart-area {
+  position: relative;
+  max-width: 50rem;
+}
+main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: var(--primary);
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: opacity 0.3s ease-in-out 0s, display 0s 0.5s;
+}
+main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.faded {
+  opacity: 0;
+  display: none;
+}
+main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.loading .svg-elem-1 {
+  -webkit-animation: animate-svg-stroke-1 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both infinite, animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both infinite;
+  animation: animate-svg-stroke-1 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both infinite, animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both infinite;
+}
+main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.loading .svg-elem-2 {
+  -webkit-animation: animate-svg-stroke-2 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both infinite, animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both infinite;
+  animation: animate-svg-stroke-2 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both infinite, animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both infinite;
+}
+main .trading-window .trade {
   justify-content: space-between;
   min-width: 20.5rem;
   border: solid 1px var(--card-shadow);
@@ -103,22 +132,22 @@ main .trading-window .trading-window-wrapper .trade {
   background: var(--card-background);
   box-shadow: 0px 2px 0px 0px var(--card-shadow);
 }
-main .trading-window .trading-window-wrapper .trade .trade-header {
+main .trading-window .trade .trade-header {
   border-bottom: 1px solid var(--card-shadow);
   padding: var(--cards-padding);
 }
-main .trading-window .trading-window-wrapper .trade .trade-header .trade-buttons .trade-button {
+main .trading-window .trade .trade-header .trade-buttons .trade-button {
   background: transparent;
   height: 1.5rem;
   width: 1.5rem;
 }
-main .trading-window .trading-window-wrapper .trade .trade-header .trade-buttons .trade-button:hover {
+main .trading-window .trade .trade-header .trade-buttons .trade-button:hover {
   opacity: 0.66;
 }
-main .trading-window .trading-window-wrapper .trade .trade-form {
+main .trading-window .trade .trade-form {
   padding: var(--cards-padding);
 }
-main .trading-window .trading-window-wrapper .trade .trade-form input {
+main .trading-window .trade .trade-form input {
   border-radius: var(--button-border-radius);
   height: var(--button-height);
   padding: var(--button-padding);
