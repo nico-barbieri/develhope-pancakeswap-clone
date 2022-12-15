@@ -2,15 +2,18 @@ import { buttons } from "./buttons.mjs";
 import { swapChart } from "./chart.mjs";
 
 const $tradeMenuBtn = document.querySelectorAll(".small-menu-button");
+const $timeRangeBtn = document.querySelectorAll(".time-range-button");
 
-for (let i = 0; i < $tradeMenuBtn.length; i++) {
-    $tradeMenuBtn[i].addEventListener('click', (event) => {
-        event.preventDefault();
-        $tradeMenuBtn.forEach(link => {
-            link.classList.remove('active');
-        });
-        $tradeMenuBtn[i].classList.add('active')
-    })
+function assignActive(buttons) {
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].addEventListener('click', (event) => {
+            event.preventDefault();
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+            buttons[i].classList.add('active')
+        })
+    }
 }
 
 for (const btnName in buttons) {
@@ -22,3 +25,6 @@ for (const btnName in buttons) {
         buttons[btnName].open = !buttons[btnName].open;
     })
 }
+
+assignActive($tradeMenuBtn);
+assignActive($timeRangeBtn);

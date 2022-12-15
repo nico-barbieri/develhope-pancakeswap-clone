@@ -71,6 +71,46 @@ main {
                     pointer-events: none;
                 }
 
+                .time-range-selection {
+                    width: fit-content;
+                    height: 2rem;
+                    margin-left: auto;
+                    background-color: #EFF4F5;
+                    border: solid 1px var(--card-shadow);
+                    border-radius: 1rem;
+
+                    .time-range-button {
+                        position: relative;
+                        width: 3rem;
+                        border-radius: 1rem;
+                        background: none;
+                        color: var(--accent);
+                        font: var(--link);
+                        z-index: 0;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            height: 100%;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            border-radius: inherit;
+                            background: var(--accent);
+                            scale: 0;
+                            z-index: -1;
+                            transition: cubic-bezier(0.5, 0, 1, 0.5) .2s;
+                        }
+
+                        &.active {
+                            color: var(--primary);
+                            &::after {
+                                scale: 1;
+                                transition: cubic-bezier(0, 0.5, 0.5, 1.5) .2s;
+                            }
+                        }
+                    }
+                }
             }
             .trade {
                 justify-content: space-between;

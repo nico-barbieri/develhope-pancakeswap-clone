@@ -34,7 +34,13 @@
         </div>
         <div class="trading-window p-5">
             <div class="trading-window-wrapper d-flex justify-content-center gap-4">
-                <div class="graph" id="swap-graph-container">
+                <div class="graph d-flex flex-column" id="swap-graph-container">
+                    <div class="time-range-selection d-flex">
+                        <button id="day" value="day" class="time-range-button active">24H</button>
+                        <button id="week" value="week" class="time-range-button">1W</button>
+                        <button id="month" value="month" class="time-range-button">1Y</button>
+                        <button id="year" value="year" class="time-range-button">1Y</button>
+                    </div>
                     <canvas id="swap-graph">
 
                     </canvas>
