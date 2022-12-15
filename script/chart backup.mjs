@@ -1,13 +1,22 @@
-import { timeUnitInMs, fakeData } from "./data-simulation.mjs";
-
-const $swapGraph = document.getElementById('swap-graph').getContext("2d");
-const $loader = document.querySelector('.chart-loader');
-const $timeRangeButtons = document.querySelectorAll('.time-range-button');
-let chartData = fakeData.chartData;
+let $swapGraph = document.getElementById('swap-graph').getContext("2d");
+let $loader = document.querySelector('.chart-loader');
 let delayed;
 let timeRange = 'day';
-//canvas size
-$swapGraph.canvas.parentNode.style.width = '100%';
+
+//empty object of data which will be filled randomly with simulateData()
+let chartData = {
+    'day': [],
+    'week': [],
+    'month': [],
+    'year': [],
+}
+
+
+// starting from value, return a value in the range [value - range/2, value + range/2]
+let randomSum = (value, range = 10) => {
+    value += Math.random() * range - (range/2);
+    return value
+}
 
 let getMinValue = (data) => {
     return Math.min(...data.map(obj => obj.y));
@@ -19,10 +28,50 @@ let valuesRange = (data) => {
     return getMaxValue(data) - getMinValue(data);
 }
 
-let simulatedData = fakeData.simulateData(timeUnitInMs.year, timeUnitInMs.hour);
+//randomly fill chartData
+let simulateData = (dataset, time = 'day') => {
+    if (!dataset[time][0]) {
+        let currentValue = 70;
+        let numberOfValues;
+        let timeMultiplier;
+        switch (time) {
+            case 'day':
+                numberOfValues = 24;
+                timeMultiplier = 3600000; //1h
+                break;  
+            case 'week':
+                numberOfValues = 28;
+                timeMultiplier = 21600000; //6h
+                break; 
+            case 'month':
+                numberOfValues = 31;
+                timeMultiplier = 86400000; //24h ~ 1d
+                break;
+            case 'year':
+                numberOfValues = 24;
+                // NOTE:
+                // this is just an approximation of an half of a month
+                // This does not consider leap years
+                timeMultiplier = 86400000 * 365 / 24; // ~ half of a month
+                break;
+            default:
+                numberOfValues = 24;
+                timeMultiplier = 3600000; //1h
+                break;
+        }
 
-console.log(chartData['day']);
-fakeData.selectDataBasedOnTimeRange(simulatedData, 'day');
+        for (let i = 0; i < numberOfValues; i++) {
+            let value = dataset[timeRange][0]? dataset[timeRange][0].y : currentValue;
+            dataset[timeRange].unshift({
+                // calculate current time in ms and then subtract (timeMultiplier * i) to populate chartData
+                x: (Date.now() - (timeMultiplier * i)), 
+                y: randomSum(value, 6),
+            })
+        }
+    }
+}
+
+simulateData(chartData, 'day');
 
 //detect if last value of chartData[timeRange] is bigger than the first and return green or red dependently
 let redOrGreen = (array, opacity = 1) => {
@@ -35,7 +84,7 @@ let redOrGreen = (array, opacity = 1) => {
 
 //update gradient
 let redOrGreenGradient = (opacity1 = 1, opacity2 = 0) =>{
-    let gradient = $swapGraph.createLinearGradient(0, 0, 0, 300);
+    let gradient = $swapGraph.createLinearGradient(0, 0, 0, 250);
     gradient.addColorStop(0, redOrGreen(chartData[timeRange], opacity1));
     gradient.addColorStop(1, redOrGreen(chartData[timeRange], opacity2));
     return gradient;
@@ -85,10 +134,10 @@ const config = {
         elements: {
             point: {
                 radius: 0,
-            },
+            }
         },
-        maintainAspectRatio: false,
-        //delay animation on chart render [not active because there is the loader]
+
+        //delay animation on chart render 
         //https://www.chartjs.org/docs/latest/samples/animations/delay.html
         animation: {
             onProgress: () => {
@@ -100,13 +149,13 @@ const config = {
               $loader.classList.remove('loading');
               $loader.classList.add('faded');
             },
-            /* delay: (context) => {
+            delay: (context) => {
               let delay = 0;
               if (context.type === 'data' && context.mode === 'default' && !delayed) {
                 delay = context.dataIndex * 50 + context.datasetIndex * 50;
               }
               return delay;
-            }, */
+            },
           },
     }
 }
@@ -114,11 +163,13 @@ const config = {
 //render chart
 export const swapChart = new Chart($swapGraph, config)
 
+const $timeRangeButtons = document.querySelectorAll('.time-range-button');
+
 $timeRangeButtons.forEach(button => {
     button.addEventListener('click', () =>{
         if (!button.classList.contains('active')) {
             timeRange = button.value;
-            fakeData.selectDataBasedOnTimeRange(simulatedData, timeRange);
+            simulateData(chartData, timeRange);
 
             //just to set last data value coherently
             if (timeRange != 'day') {

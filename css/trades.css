@@ -37,7 +37,6 @@ main .trading-window {
   /*viewport height - navbar height - small menu height*/
 }
 main .trading-window .trading-window-wrapper {
-  max-width: var(--section-max-w);
   margin: 0 auto;
 }
 main .trading-window .trading-window-wrapper .graph {
@@ -48,7 +47,7 @@ main .trading-window .trading-window-wrapper .graph {
   background: var(--card-background);
   box-shadow: 0px 2px 0px 0px var(--card-shadow);
   width: 100%;
-  /*height: 32.5rem;*/
+  max-width: 50rem;
   transition: opacity 0.15s 0.3s, width 0.3s ease-in-out 0s;
 }
 main .trading-window .trading-window-wrapper .graph.hide {
@@ -97,8 +96,8 @@ main .trading-window .trading-window-wrapper .graph .time-range-selection .time-
   transition: cubic-bezier(0, 0.5, 0.5, 1.5) 0.2s;
 }
 main .trading-window .trading-window-wrapper .graph .chart-area {
+  display: flex;
   position: relative;
-  max-width: 50rem;
 }
 main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader {
   display: block;
@@ -108,8 +107,6 @@ main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader {
   height: 100%;
   width: 100%;
   background: var(--primary);
-  -o-object-fit: cover;
-     object-fit: cover;
   transition: opacity 0.3s ease-in-out 0s, display 0s 0.5s;
 }
 main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.faded {
@@ -123,6 +120,10 @@ main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.lo
 main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.loading .svg-elem-2 {
   -webkit-animation: animate-svg-stroke-2 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both infinite, animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both infinite;
   animation: animate-svg-stroke-2 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s both infinite, animate-svg-fill-2 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s both infinite;
+}
+main .trading-window .trading-window-wrapper .graph .chart-area canvas {
+  width: 100%;
+  height: 100%;
 }
 main .trading-window .trade {
   justify-content: space-between;
