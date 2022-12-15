@@ -1,0 +1,8 @@
+.carousel{
+    max-width: 1112px;
+    max-height: 192px;
+    height: 100%;
+    width: 100%;
+    border-radius: 1.5rem;
+    background-color: red;
+}
