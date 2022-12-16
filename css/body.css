@@ -248,4 +248,21 @@
 .loader-wrapper.faded {
   opacity: 0;
   display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .landing-section, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7 {
+    padding: 4rem 1rem;
+    flex-direction: column;
+  }
+  .landing-section-wrapper, .section-3-wrapper, .section-4-top, .section-5-wrapper, .section-6-top, .section-7-wrapper {
+    flex-direction: column-reverse !important;
+  }
+  .big-cards-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .big-cards-container .left-card, .big-cards-container .right-card {
+    transform: rotate(0deg);
+  }
 }/*# sourceMappingURL=body.css.map */
