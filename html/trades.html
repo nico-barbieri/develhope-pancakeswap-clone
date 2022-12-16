@@ -35,11 +35,17 @@
         <div class="trading-window p-5">
             <div class="trading-window-wrapper d-flex justify-content-center gap-4">
                 <div class="graph d-flex flex-column" id="swap-graph-container">
-                    <div class="time-range-selection d-flex">
-                        <button id="day" value="day" class="time-range-button active">24H</button>
-                        <button id="week" value="week" class="time-range-button">1W</button>
-                        <button id="month" value="month" class="time-range-button">1M</button>
-                        <button id="year" value="year" class="time-range-button">1Y</button>
+                    <div class="graph-header d-flex">
+                        <div class="tooltip-area">
+                            <h3 class="sub-title color-sec-lighter"><span id="tooltip-value" class="small-title"></span>BNB/CAKE</h3>
+                            <p id="tooltip-date" class="small-text text-uppercase color-sec"></p>
+                        </div>
+                        <div class="time-range-selection d-flex">
+                            <button id="day" value="day" class="time-range-button active">24H</button>
+                            <button id="week" value="week" class="time-range-button">1W</button>
+                            <button id="month" value="month" class="time-range-button">1M</button>
+                            <button id="year" value="year" class="time-range-button">1Y</button>
+                        </div>
                     </div>
                     <div class="chart-area">
                         <div class="chart-loader">
@@ -164,8 +170,5 @@
     <script type="module" src="../script/trade.mjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/luxon@1.27.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-luxon@1.0.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-streaming@2.0.0"></script>
 </body>
 </html>

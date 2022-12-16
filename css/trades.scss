@@ -72,6 +72,11 @@ main {
                     pointer-events: none;
                 }
 
+                .tooltip-area {
+                    #tooltip-value {
+                        margin-right: .5ch;
+                    }
+                }
                 .time-range-selection {
                     width: fit-content;
                     height: 2rem;
@@ -126,11 +131,11 @@ main {
                         height: 100%;
                         width: 100%;
                         background: var(--primary);
-                        transition: opacity .3s ease-in-out 0s, display 0s .5s;
+                        pointer-events: none;
 
                         &.faded {
                             opacity: 0;
-                            display: none;
+                            transition: opacity .3s ease-in-out 0s;
                         }
 
                         &.loading .svg-elem-1 {

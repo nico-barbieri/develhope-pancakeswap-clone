@@ -1,8 +1,10 @@
 import { timeUnitInMs, fakeData } from "./data-simulation.mjs";
-
+const $graphArea = document.getElementById('swap-graph-container');
 const $swapGraph = document.getElementById('swap-graph').getContext("2d");
 const $loader = document.querySelector('.chart-loader');
 const $timeRangeButtons = document.querySelectorAll('.time-range-button');
+const $date = document.getElementById('tooltip-date');
+const $value = document.getElementById('tooltip-value');
 let chartData = fakeData.chartData;
 let delayed;
 let timeRange = 'day';
@@ -21,7 +23,6 @@ let valuesRange = (data) => {
 
 let simulatedData = fakeData.simulateData(timeUnitInMs.year, timeUnitInMs.hour);
 
-console.log(chartData['day']);
 fakeData.selectDataBasedOnTimeRange(simulatedData, 'day');
 
 //detect if last value of chartData[timeRange] is bigger than the first and return green or red dependently
@@ -45,7 +46,7 @@ let redOrGreenGradient = (opacity1 = 1, opacity2 = 0) =>{
 const data = {
     //labels: chartLabels,
     datasets: [{
-        label: 'BNB/CAKE',
+        //label: 'BNB/CAKE',
         data: chartData['day'],
         fill: true,
         backgroundColor: redOrGreenGradient(.5, 0),
@@ -54,16 +55,41 @@ const data = {
     }],
 }
 
+const convertToDate = (time) => {
+    return new Date(time).toLocaleString([], {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true,
+    });
+}
+
+$value.innerHTML = simulatedData[simulatedData.length - 1].y.toFixed(2);
+$date.innerHTML = convertToDate(simulatedData[simulatedData.length - 1].x);
+//https://www.youtube.com/watch?v=3W3NFKxGw5w&t=4839s
+const tooltipHandler = (context) => {
+    const {tooltip} = context;
+    $date.innerHTML = convertToDate(tooltip.dataPoints[0].raw.x);
+    $value.innerHTML = parseFloat(tooltip.dataPoints[0].raw.y).toFixed(2);
+}
+
 // chart settings
 const config = {
     type: 'line', //chart type
     data,
     options: {
+        maintainAspectRatio: false,
+        tension: .2,
         // axes
         scales: {
             x: {
                 parsing: true,
                 type: 'time',
+                time: {
+                    round: 'hour',
+                },
                 //bg grid settings (in this case, it's hidden)
                 grid:  {
                     display: false,
@@ -78,53 +104,58 @@ const config = {
                     display: false,
                 },
                 //y axis is hidden
-                display: true,
+                display: false,
             }
         },
-        tension: .1, 
+        
         elements: {
             point: {
                 radius: 0,
+                hitRadius: 10,
+                hoverRadius: 20,
             },
         },
-        maintainAspectRatio: false,
+        
+        plugins: {
+            legend: {
+                display: false,
+            },
+
+            tooltip: {
+                enabled: false,
+                external: tooltipHandler,
+            }
+        },
+        interaction: {
+            mode: 'nearest',
+            axis: 'x',
+            intersect: false,
+          },
         //delay animation on chart render [not active because there is the loader]
         //https://www.chartjs.org/docs/latest/samples/animations/delay.html
         animation: {
-            onProgress: () => {
-                $loader.classList.remove('faded');
-                $loader.classList.add('loading');                
-            },
             onComplete: () => {
-              //delayed = true;
               $loader.classList.remove('loading');
               $loader.classList.add('faded');
             },
-            /* delay: (context) => {
-              let delay = 0;
-              if (context.type === 'data' && context.mode === 'default' && !delayed) {
-                delay = context.dataIndex * 50 + context.datasetIndex * 50;
-              }
-              return delay;
-            }, */
           },
     }
 }
 
 //render chart
-export const swapChart = new Chart($swapGraph, config)
+export const swapChart = new Chart($swapGraph, config);
+
+
 
 $timeRangeButtons.forEach(button => {
     button.addEventListener('click', () =>{
         if (!button.classList.contains('active')) {
+            
+            $loader.classList.remove('faded');
+            $loader.classList.add('loading');
+            
             timeRange = button.value;
             fakeData.selectDataBasedOnTimeRange(simulatedData, timeRange);
-
-            //just to set last data value coherently
-            if (timeRange != 'day') {
-                chartData[timeRange][chartData[timeRange].length - 1].y = chartData['day'][chartData['day'].length - 1].y;
-            }
-
             swapChart.data.datasets[0].data = chartData[timeRange];
             swapChart.data.datasets[0].backgroundColor = redOrGreenGradient(.5, 0);
             swapChart.data.datasets[0].borderColor = redOrGreen(chartData[timeRange]);
@@ -133,6 +164,12 @@ $timeRangeButtons.forEach(button => {
         }
     })
 });
+
+//show last data date & value when chart is not hovered
+$graphArea.addEventListener('mouseout', () => {
+    $value.innerHTML = simulatedData[simulatedData.length - 1].y.toFixed(2);
+    $date.innerHTML = convertToDate(simulatedData[simulatedData.length - 1].x);
+})
 
  /*
 Console max and min value of chartData[timeRange], its range and lowest/highest point of y axis:

@@ -21,7 +21,7 @@ const simulateData = (timeRange = 0, timeUnit = 0) => {
     for (let i = 0; i < numberOfValues; i++) {
         let value = dataset[0] ? dataset[0].y : currentValue;
         do {
-            value = randomSum(value, 2) //how much value is instable: higher values -> more instable
+            value = randomSum(value, 2); //how much value is instable: higher values -> more instable
         } while (value < 0);
         dataset.unshift({
             // calculate current time in ms and then subtract (timeMultiplier * i) to populate chartData
@@ -69,7 +69,6 @@ const selectDataBasedOnTimeRange = (dataset, time = 'day') => {
 
         for (let i = 0; i < dataset.slice(-dataRange).length; i+= span) {
             chartData[time].push(dataset.slice(-dataRange)[i]);
-            console.log(dataset.slice(-dataRange));
         }
     }
 };

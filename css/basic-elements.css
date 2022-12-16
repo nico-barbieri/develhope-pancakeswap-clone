@@ -11,6 +11,7 @@
     --paragraph: 400 16px / 24px 'Kanit';
     --link: 600 16px / 1 'Kanit';
     --big-data: 600 24px / 26px 'Kanit';
+    --small-text: 400 14px / 21px 'Kanit';
     /*COLOURS*/
     --primary: #FFFFFF;
     --primary-static: #FFFFFF;
@@ -152,6 +153,9 @@ body {
         .big-data {
             font: var(--big-data);
         }
+        .small-text {
+            font: var(--small-text);
+        }
 
 /*DARK MODE*/
         :root:has(#dark-mode:checked) .small-title {
@@ -176,6 +180,9 @@ body {
         }
         .color-sec {
             color: var(--secondary) !important;
+        }
+        .color-sec-lighter {
+            color: var(--secondary-lighter);
         }
         .color-acc {
             color: var(--accent) !important;

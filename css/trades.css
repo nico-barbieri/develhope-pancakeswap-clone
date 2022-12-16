@@ -56,6 +56,9 @@ main .trading-window .trading-window-wrapper .graph.hide {
   transition: opacity 0.15s 0s, width 0.3s ease-in-out 0s;
   pointer-events: none;
 }
+main .trading-window .trading-window-wrapper .graph .tooltip-area #tooltip-value {
+  margin-right: 0.5ch;
+}
 main .trading-window .trading-window-wrapper .graph .time-range-selection {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -107,11 +110,11 @@ main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader {
   height: 100%;
   width: 100%;
   background: var(--primary);
-  transition: opacity 0.3s ease-in-out 0s, display 0s 0.5s;
+  pointer-events: none;
 }
 main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.faded {
   opacity: 0;
-  display: none;
+  transition: opacity 0.3s ease-in-out 0s;
 }
 main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.loading .svg-elem-1 {
   -webkit-animation: animate-svg-stroke-1 1.5s cubic-bezier(0.47, 0, 0.745, 0.715) 0s both infinite, animate-svg-fill-1 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.8s both infinite;
