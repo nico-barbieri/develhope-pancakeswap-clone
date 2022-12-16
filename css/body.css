@@ -265,4 +265,16 @@
   .big-cards-container .left-card, .big-cards-container .right-card {
     transform: rotate(0deg);
   }
+
+  .section-6 .data{
+    flex-wrap: wrap;
+  }
+  .section-6 .data div{
+    gap: inherit !important;
+  }
+  .section-6 .data > :not(:first-child) > * {
+    border-left: none;
+    padding-left: inherit;
+  }
+  
 }/*# sourceMappingURL=body.css.map */

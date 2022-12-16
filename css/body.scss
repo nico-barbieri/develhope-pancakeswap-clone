@@ -300,4 +300,14 @@
     .big-cards-container .left-card, .big-cards-container .right-card {
         transform: rotate(0deg);
     }
+    .section-6 .data{
+        flex-wrap: wrap;
+        div{
+          gap: inherit !important;
+        }
+        & > :not(:first-child) > * {
+            border-left: none;
+            padding-left: inherit;
+        }
+    }
 }
