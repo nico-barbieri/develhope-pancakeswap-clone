@@ -1,7 +1,7 @@
 .swap-carousel {
     width: 100%;
     margin-bottom: 2rem;
-    overflow: visible;
+    overflow: hidden;
 }
 .carousel-inner, .carousel-item {
     height: 100%;
@@ -11,9 +11,9 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    height: 10rem;
-    padding: 1rem;
-    overflow: visible;
+    justify-content: end;
+    height: 12rem;
+    max-width: 72rem;
     z-index: 0;
 }
 .slide-container .bg-image {
@@ -22,11 +22,30 @@
     pointer-events: none;
     width: fit-content;
     margin-top: -4rem;
-    height: 140%;
+    height: 13rem;
     right: 0;
     bottom: -1.2rem;
     overflow: visible;
     z-index: -1;
+    transition: all .6s ease-in-out;
+}
+/*to gentle fade overflowing images*/
+.active.carousel-item-start .bg-image,
+.active.carousel-item-end .bg-image {
+    opacity: 0;
+}
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-gradient-5);
+    z-index: -2;
+}
+.slide1 .slide-content {
+    background: linear-gradient(rgb(0, 191, 165) 0%, rgb(0, 90, 90) 100%);
 }
 
 .swap-carousel .main-button {
@@ -41,12 +60,11 @@
     flex: 1;
 }
 .carousel{
-    max-width: 1112px;
-    max-height: 192px;
     height: 100%;
     width: 100%;
+    max-width: 72rem;
     border-radius: 1.5rem;
-    background: var(--bg-gradient-5);
+    overflow: hidden;
 }
 
 .carousel-1-title {
