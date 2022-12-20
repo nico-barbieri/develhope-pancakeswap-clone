@@ -1,0 +1,86 @@
+.swap-carousel {
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+.carousel-inner, .carousel-item {
+    height: 100%;
+}
+
+.slide-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 14rem;
+    max-width: 72rem;
+    z-index: 0;
+}
+.slide-container .bg-image {
+    display: flex;
+    position: absolute;
+    pointer-events: none;
+    width: fit-content;
+    max-width: 100%;
+    margin-top: -4rem;
+    max-height: 15rem;
+    right: 0;
+    bottom: -1.2rem;
+    overflow: visible;
+    z-index: 1;
+    transition: all .6s ease-in-out;
+}
+/*to gentle fade overflowing images*/
+.active.carousel-item-start .bg-image,
+.active.carousel-item-end .bg-image {
+    opacity: 0;
+}
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    width: 100%;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-gradient-5);
+    z-index: 0;
+}
+
+.slide-content h4 {
+    margin-bottom: 0;
+}
+
+.slideshow-text, .carousel-1-link, .carousel-2-link, .carousel-3-link {
+    z-index: 100 !important;
+}
+.slide1 .slide-content {
+    background: linear-gradient(rgb(0, 191, 165) 0%, rgb(0, 90, 90) 100%);
+}
+
+.swap-carousel .main-button {
+    bottom: 0;
+}
+.swap-carousel button svg {
+    margin-left: 1ch;
+    fill: var(--primary-static);
+}
+.slideshow-text {
+    text-shadow: 0px 3px 2px rgba(00, 00, 00, .33);
+    flex: 1;
+}
+.carousel{
+    height: 100%;
+    width: 100%;
+    max-width: 72rem;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.carousel-1-title {
+    height: 1.2rem;
+    display: flex;
+}
+.carousel-1-title img{
+    height: 100%;
+    object-fit: contain;
+}

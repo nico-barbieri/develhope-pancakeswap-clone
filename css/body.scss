@@ -197,16 +197,15 @@
         margin: 0 auto;
     }
 
-    .section-6 .data {
+    .data {
         width: 100%;
         justify-content: space-between;
-    }
 
-    &> :not(:first-child)>* {
-        border-left: 1px solid var(--secondary-lightest);
-        padding-left: 1rem;
+        &> :not(:first-child) > * {
+            border-left: 1px solid var(--secondary-lightest);
+            padding-left: 1rem;
+        }
     }
-
 }
 
 /***********/
@@ -253,4 +252,62 @@
         right: -4rem;
     }
 
+}
+
+/********/
+/*LOADER*/
+/********/
+.loader-wrapper{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-gradient-5);
+    z-index: 100;
+    transition: opacity .3s ease-in-out 0s, display 0s .5s;
+
+    img {
+        scale: .75;
+    }
+
+    &.faded {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .landing-section, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7 {
+        padding: 4rem 1rem;
+        flex-direction: column;
+    }
+
+    .landing-section-wrapper, .section-3-wrapper, .section-4-top, .section-5-wrapper, .section-6-top, .section-7-wrapper {
+        flex-direction: column-reverse !important;
+    }
+
+    .big-cards-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .big-cards-container .left-card, .big-cards-container .right-card {
+        transform: rotate(0deg);
+    }
+    .section-6 .data{
+        flex-wrap: wrap;
+        div{
+          gap: inherit !important;
+        }
+        & > :not(:first-child) > * {
+            border-left: none;
+            padding-left: inherit;
+        }
+    }
 }

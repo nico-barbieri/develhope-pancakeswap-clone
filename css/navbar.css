@@ -38,3 +38,79 @@ hr{
     max-height: 400px;
     overflow-y: auto;
 }
+
+nav img, nav svg {
+    height: 1.5rem;
+}
+
+.logo-extended {
+    fill: var(--primary-darkmode);
+}
+
+:root:has(#dark-mode:checked) .logo-extended {
+    fill: var(--primary-static);
+}
+
+.logo-extended .eye{
+    transform-origin: 50% 60%;
+}
+.logo-extended:hover .eye{
+    animation: blink 500ms linear 1 normal forwards
+}
+.logo-small {
+    display: none;
+}
+
+.bnb-smart-chain .menu-button {
+    position: relative;
+    display: flex;
+    padding-left: 3rem;
+    background: #EEF4FF;
+}
+.bnb-smart-chain .menu-button img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+
+@keyframes blink { 
+    0% {
+        transform: scale(1,1);
+        animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+    } 
+    50% {
+        transform: scale(1,0);
+        animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+    } 
+    100% {
+        transform: scale(1,1)
+    }
+}
+
+@media screen and (max-width: 967px) {
+    .logo-small {
+        display: block;
+    }
+    .logo-extended {
+        display: none;
+    }
+
+    .logo-small:hover .eyes{
+        animation: blink 500ms linear 1 normal forwards
+    }
+
+    @keyframes blink { 
+        0% {
+            transform: translate(98.692997px,117.896004px) scale(1,1);
+            animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+        } 
+        50% {
+            transform: translate(98.692997px,117.896004px) scale(1,0);
+            animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+        } 
+        100% {
+            transform: translate(98.692997px,117.896004px) scale(1,1)}
+        }
+}

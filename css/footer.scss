@@ -14,7 +14,6 @@ $color_7: white;
 	padding-bottom: 20px;
 	background: #27262C;
 	overflow: hidden;
-	height: 499px;
 }
 .footer-container {
 	width: 1200px;
@@ -104,6 +103,10 @@ $color_7: white;
 		text-decoration: none;
 	}
 }
+
+.dropdown2 {
+	position: relative;
+}
 .lang-en {
 	display: flex;
 	overflow: hidden;
@@ -130,12 +133,16 @@ $color_7: white;
 	display: flex;
 	flex-direction: column;
 	position: absolute;
+	bottom: 2rem;
 	pointer-events: none;
 	opacity: 0;
 	overflow: scroll;
 	height: 15rem;
+	width: 8rem;
 	z-index: 10;
-	transition: all .1s ease-i;
+	transition: all .1s ease-in;
+	overflow-y: overlay;
+	overflow-x: hidden;
 }
 #footer-lang {
 	&:focus {
