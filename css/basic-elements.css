@@ -99,6 +99,7 @@ a, a:hover, a:active, a:focus {
 
 body {
     overflow-y: overlay;
+    overflow-x: hidden;
 }
  
 /*Scroll-bar*/
@@ -183,6 +184,9 @@ body {
         }
         .color-sec-lighter {
             color: var(--secondary-lighter);
+        }
+        .color-sec-darker {
+            color: var(--secondary-darker) !important;
         }
         .color-acc {
             color: var(--accent) !important;
