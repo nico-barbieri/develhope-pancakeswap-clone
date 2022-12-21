@@ -1,3 +1,22 @@
+body {
+    position: relative;
+
+    .fixed-button {
+        position: fixed;
+        bottom: 3rem;
+        right: 3rem;
+        padding: 1rem;
+        z-index: 1000;
+        img {
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: none;
+        }
+    }
+}
+
 /* section 1 */
 .landing-section {
     position: relative;
