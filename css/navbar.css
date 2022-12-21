@@ -2,6 +2,14 @@ nav{
     background-color: var(--primary);
 }
 
+#navbar{
+    position: fixed;
+    transition: top 0.4s; 
+    top: 0;
+    width: 98%;
+    z-index: 2;
+}
+
 :root:has(#dark-mode:checked) nav {
     --primary: var(--background-alt);
     --primary-darker: var(--card-shadow-dark); /*#353547*/
