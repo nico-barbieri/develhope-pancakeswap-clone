@@ -199,7 +199,7 @@
   margin-right: 2px;
   padding: 0px 10px;
   transform: scale(100%);
-  transition: all 0.6s cubic-bezier(0, 3.06, 0.45, -0.85);
+  transition: all 0.2s cubic-bezier(0.5, 0, 0.2, 3);
 }
 .bunny-icon:hover {
   transform: scale(110%);

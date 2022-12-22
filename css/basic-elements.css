@@ -638,7 +638,7 @@ body {
 
 .divider-small-up {
     position: absolute;
-    top: 0;
+    top: -1px;
     width: 100%;
     z-index: 0;
     pointer-events: none;
@@ -662,4 +662,17 @@ body {
     fill: var(--primary);
     scale: -1 1;
     height: var(--divider-small-h);
+}
+
+@media only screen and (max-width : 1224px) {
+    *:hover {
+        opacity: 1 !important;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .animation-layer {
+        top: 0 !important;
+        left: 0 !important;
+    }
 }

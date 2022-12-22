@@ -4,10 +4,12 @@ nav{
 
 #navbar{
     position: fixed;
+    display: flex;
     transition: top 0.4s; 
     top: 0;
+    height: 3.5rem;
     width: 100%;
-    z-index: 10000;
+    z-index: 1000;
 }
 
 
@@ -17,8 +19,9 @@ nav{
 }
 .ps-nav-link {
     border-radius: 1rem;
-    display: block;
-    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0rem 1rem;
     text-decoration: none;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
@@ -30,11 +33,47 @@ nav{
 }
 
 .rotondo{
-    border-radius: 1.5rem;
+    border-radius: 1rem;
     background-color: var(--primary);
     color: white;
 }
-
+.nav-links {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.dropdown {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.dropdown .dropdown-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 3.25rem;
+    opacity: 0;
+    padding: .75rem 0;
+    pointer-events: none;
+    transform: translate(0, -1rem);
+    transition: all .1s ease-in-out;
+}
+.dropdown .dropdown-menu::after{
+    content: "";
+    height: 1rem;
+    background: none;
+    width: 100%;
+    position: absolute;
+    top: -1rem;
+}
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    pointer-events: all;
+    transform: translate(0, 0);
+}
+.dropdown-item {
+    padding: .5rem 1rem;
+}
 hr{
     border: none;
     height: 1px;
@@ -42,9 +81,9 @@ hr{
 
 }
 
-.dropdown-lingue{
+.dropdown-lang{
     max-height: 400px;
-    overflow-y: auto;
+    overflow-y: overlay;
 }
 
 nav img, nav svg {
@@ -68,7 +107,9 @@ nav img, nav svg {
 .logo-small {
     display: none;
 }
-
+.bnb-smart-chain {
+    height: var(--button-small-height);
+}
 .bnb-smart-chain .menu-button {
     position: relative;
     display: flex;
@@ -86,6 +127,12 @@ nav img, nav svg {
     height: 100%;
 }
 
+.bnb-smart-chain .dropdown-title {
+    border-bottom: 1px solid var(--primary-darker);
+}
+.bnb-smart-chain .dropdown-title:hover {
+    background: transparent;
+}
 
 @keyframes blink { 
     0% {
@@ -101,17 +148,30 @@ nav img, nav svg {
     }
 }
 
-@media screen and (max-width:768px){
-    .logo-small {
+@keyframes blink-logo-small { 
+    0% {
+        transform: translate(98.692997px,117.896004px) scale(1,1);
+        animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+    } 
+    50% {
+        transform: translate(98.692997px,117.896004px) scale(1,0);
+        animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+    } 
+    100% {
+        transform: translate(98.692997px,117.896004px) scale(1,1)}
+    }
+
+@media screen and (max-width: 768px) {
+    nav .logo-small {
         display: block;
     }
-    .logo-extended {
+    nav .logo-extended {
         display: none;
     }
     
 
     .logo-small:hover .eyes{
-        animation: blink 500ms linear 1 normal forwards
+        animation: blink-logo-small 500ms linear 1 normal forwards
     }
     .menu-links{
         position:fixed;
@@ -134,7 +194,7 @@ nav img, nav svg {
     .icona{
         height: 17px;
     }
-    .dropdown-menu{
+    .menu-links .dropdown-menu{
         width:100vw;
     }
 .dropdown a{
