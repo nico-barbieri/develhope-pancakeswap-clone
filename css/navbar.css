@@ -178,9 +178,6 @@ nav img, nav svg {
         display: none;
     }
 
-    .footer-wrapper {
-        margin-bottom: 3rem; /*to not cover bottom menu on mobile*/
-    }
     .menu-links .dropdown .dropdown-menu {
         bottom: calc(3rem + 1px);
         top: unset;
