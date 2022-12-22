@@ -173,6 +173,7 @@ body {
     fill: var(--secondary-lightest);
 }
 
+
 /***********/
 /*SECTION 5*/
 /***********/
@@ -259,6 +260,7 @@ body {
     }
 }
 
+
 /***********/
 /*SECTION 7*/
 /***********/
@@ -304,6 +306,14 @@ body {
     }
 
 }
+@media screen and (max-width: 412px) { 
+    .paragraph {
+      text-align: center;
+    }
+    .section-7 .animation-box {
+      display:none;
+    }
+  }
 
 /********/
 /*LOADER*/

@@ -153,6 +153,7 @@ body .fixed-button img {
   fill: var(--secondary-lightest);
 }
 
+
 /***********/
 /*SECTION 5*/
 /***********/
@@ -231,6 +232,7 @@ body .fixed-button img {
   padding-left: 1rem;
 }
 
+
 /***********/
 /*SECTION 7*/
 /***********/
@@ -296,6 +298,15 @@ body .fixed-button img {
 .loader-wrapper.faded {
   opacity: 0;
   display: none;
+}
+
+@media screen and (max-width: 412px) { 
+  .paragraph {
+    text-align: center;
+  }
+  .section-7 .animation-box {
+    display:none;
+  }
 }
 
 @media screen and (max-width: 1224px) {
