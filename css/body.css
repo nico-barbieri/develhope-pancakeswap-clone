@@ -36,17 +36,17 @@ body .fixed-button img {
 .landing-section .landing-section-wrapper title {
   padding: 1rem 0;
 }
-@media screen and (min-width: 768px) and (max-width: 820px) {
-  .text-box .title {
-      font-size: 48px;
-      font-weight: 500;
+
+@media screen and (max-width: 768px) {
+  .ps-card {
+    flex-direction: column;
+    width: 290px;
+    height: 180px;
   }
-  br {
-    display:none;
+  .small-title {
+    font-size: 32px;
   }
 }
-
-
 /* section 2 */
 .section-2 {
   position: relative;
@@ -70,7 +70,6 @@ body .fixed-button img {
     font-size: 32px;
   }
 }
-
 /* section 3 */
 .section-3 {
   position: relative;
@@ -285,7 +284,7 @@ body .fixed-button img {
   justify-content: center;
   align-items: center;
   background: var(--bg-gradient-5);
-  z-index: 100;
+  z-index: 10000;
   transition: opacity 0.3s ease-in-out 0s, display 0s 0.5s;
 }
 .loader-wrapper img {

@@ -315,7 +315,7 @@ body {
     justify-content: center;
     align-items: center;
     background: var(--bg-gradient-5);
-    z-index: 100;
+    z-index: 10000;
     transition: opacity .3s ease-in-out 0s, display 0s .5s;
 
     img {
