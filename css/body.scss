@@ -39,7 +39,16 @@ body {
         }
     }
 }
-
+@media screen and (max-width: 768px) {
+    .ps-card {
+      flex-direction: column;
+      width: 290px;
+      height: 180px;
+    }
+    .small-title {
+      font-size: 32px;
+    }
+  }
 
 /* section 2 */
 .section-2 {
