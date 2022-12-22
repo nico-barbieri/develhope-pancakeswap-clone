@@ -33,7 +33,8 @@ main .small-menu .button-wrapper a.active::after {
 main .trading-window {
   background: linear-gradient(140deg, #e5fdff, #f3efff);
   width: 100vw;
-  height: calc(100vh - 2.5rem);
+  padding: 2.5rem;
+  min-height: calc(100vh - 2.5rem);
   /*viewport height - navbar height - small menu height*/
 }
 main .trading-window .trading-window-wrapper {
@@ -46,6 +47,7 @@ main .trading-window .trading-window-wrapper .graph {
   border-radius: var(--cards-border-radius);
   background: var(--card-background);
   box-shadow: 0px 2px 0px 0px var(--card-shadow);
+  min-height: 40vh;
   width: 100%;
   max-width: 50rem;
   transition: opacity 0.15s 0.3s, width 0.3s ease-in-out 0s;
@@ -101,6 +103,7 @@ main .trading-window .trading-window-wrapper .graph .time-range-selection .time-
 main .trading-window .trading-window-wrapper .graph .chart-area {
   display: flex;
   position: relative;
+  height: 100%;
 }
 main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader {
   display: block;
@@ -151,6 +154,11 @@ main .trading-window .trade .trade-header .trade-buttons .trade-button:hover {
 main .trading-window .trade .trade-form {
   padding: var(--cards-padding);
 }
+main .trading-window .trade .trade-form h4 {
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+}
 main .trading-window .trade .trade-form #invert {
   width: 40px;
   border-radius: 50%;
@@ -180,7 +188,19 @@ main .trading-window .trade .trade-form ::-webkit-input-placeholder {
 }
 
 @media screen and (max-width: 1200px) {
-  .trading-window-wrapper {
-    flex-wrap: wrap;
+  main .trading-window {
+    padding: 5vw;
+  }
+  main .trading-window .trading-window-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  main .trading-window .trading-window-wrapper .trade {
+    min-width: unset;
+    width: 100%;
+  }
+  main .trading-window .trading-window-wrapper .graph-header {
+    flex-direction: column;
+    gap: 0.5rem;
   }
 }/*# sourceMappingURL=trades.css.map */

@@ -47,7 +47,8 @@ main {
     .trading-window {
         background: linear-gradient(140deg, #e5fdff, #f3efff);
         width: 100vw;
-        height: calc(100vh - $small-menu-h);
+        padding: 2.5rem;
+        min-height: calc(100vh - 2.5rem);
         /*viewport height - navbar height - small menu height*/
 
         .trading-window-wrapper {
@@ -60,7 +61,7 @@ main {
                 border-radius: var(--cards-border-radius);
                 background: var(--card-background);
                 box-shadow: 0px 2px 0px 0px var(--card-shadow);
-
+                min-height: 40vh;
                 width: 100%;
                 max-width: 50rem;
                 transition: opacity .15s .3s, width .3s ease-in-out 0s;
@@ -123,6 +124,7 @@ main {
                 .chart-area {
                     display: flex;
                     position: relative;
+                    height: 100%;
 
                     .chart-loader {
                         display: block;
@@ -190,6 +192,12 @@ main {
             .trade-form {
                 padding: var(--cards-padding);
 
+                h4{
+                    margin-bottom: 0;
+                    display: flex;
+                    align-items: center;
+                }
+
                 #invert {
                     width: 40px;
                     border-radius: 50%;
@@ -235,8 +243,23 @@ main {
 //responsive//
 
 @media  screen and (max-width: 1200px) {
-    .trading-window-wrapper{
-        flex-wrap: wrap;
+    main {
+
+        .trading-window{
+            padding: 5vw;
+            .trading-window-wrapper {
+                flex-direction: column;
+                align-items: center;
+                .trade {
+                    min-width: unset;
+                    width: 100%;
+                }
+                .graph-header {
+                    flex-direction: column;
+                    gap: .5rem;
+                }
+            }
+        }
     }
 }
 // 

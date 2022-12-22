@@ -13,7 +13,6 @@ let chartData = fakeData.chartData;
 let timeRange = 'day';
 
 //canvas size
-$swapGraph.canvas.parentNode.style.width = '100%';
   
 for (const btnName in buttons) {
     buttons[btnName].$button.addEventListener('click', () => {

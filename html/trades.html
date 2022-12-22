@@ -22,7 +22,7 @@
     <main>
         <a href="../index.html" class="paragraph">HOME (provvisorio)</a>
         <div class="small-menu">
-            <div class="button-wrapper d-flex justify-content-center align-items-center gap-5">
+            <div class="button-wrapper d-flex justify-content-center align-items-center gap-3">
                 <a href="#" class="small-menu-button paragraph active">Swap</a>
                 <a href="#" class="small-menu-button paragraph">Limit</a>
                 <a href="#" class="small-menu-button paragraph">Liquidity</a>
@@ -30,7 +30,7 @@
                 <a href="#" class="small-menu-button paragraph">Bridge</a>
             </div>
         </div>
-        <div class="trading-window p-5">
+        <div class="trading-window">
             <div class="trading-window-wrapper d-flex justify-content-center gap-4">
                 <div class="graph d-flex flex-column" id="swap-graph-container">
                     <div class="graph-header d-flex">
@@ -156,9 +156,9 @@
                         </div>
                     </div>
                     <form class="trade-form d-flex flex-column gap-3">
-                      <div class="d-flex flex-column gap-3 trade-form-container-xs ">
+                      <div class="d-flex flex-column gap-2 trade-form-container-xs ">
                         <div class="form-input-container">
-                          <div class="d-flex gap-3">
+                          <div class="d-flex gap-3 p-2">
                             <img src="../res/round-logo.svg" alt="" width="30px" >
                             <h4 class="sub-title trade-button">BNB 
                               <img src="../res/icons/arrow-down.svg" alt="dropdown-icon">
@@ -166,11 +166,11 @@
                           </div>
                           <input type="number" class="sell" placeholder="0.0">
                         </div>
-                        <button  class="mx-auto trade-button"  disabled>
-                          <img src="../res/icons/full-arrow-down.svg" alt="arrow-down" id="invert">
+                        <button  class="mx-auto trade-button" id="invert">
+                          <img src="../res/icons/full-arrow-down.svg" alt="arrow-down">
                         </button>
                         <div class="form-input-container">
-                          <div class="d-flex gap-3">
+                          <div class="d-flex gap-3 p-2">
                             <img src="../res/icons/cube-icon.svg" alt="" width="30px">
                             <h4 class="sub-title trade-button">CAKE 
                               <img src="../res/icons/arrow-down.svg" alt="dropdown-icon">
