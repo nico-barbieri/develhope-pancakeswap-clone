@@ -10,6 +10,7 @@ nav{
     z-index: 10000;
 }
 
+
 :root:has(#dark-mode:checked) nav {
     --primary: var(--background-alt);
     --primary-darker: var(--card-shadow-dark); /*#353547*/
@@ -24,7 +25,6 @@ nav{
 .ps-nav-link:hover{
     background-color: var(--primary-darker);
 }
-
 .dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus {
     background-color: var(--primary-darker);
 }
@@ -75,6 +75,10 @@ nav img, nav svg {
     padding-left: 3rem;
     background: #EEF4FF;
 }
+.bnb-smart-chain .ps-nav-link{
+    flex-direction: row;
+}
+
 .bnb-smart-chain .menu-button img{
     position: absolute;
     left: 0;
@@ -97,17 +101,47 @@ nav img, nav svg {
     }
 }
 
-@media screen and (max-width: 967px) {
+@media screen and (max-width:768px){
     .logo-small {
         display: block;
     }
     .logo-extended {
         display: none;
     }
+    
 
     .logo-small:hover .eyes{
         animation: blink 500ms linear 1 normal forwards
     }
+    .menu-links{
+        position:fixed;
+        bottom:0;
+        width:100%;
+        border-top:1px solid white;
+        background:white;
+        display:flex;
+        justify-content: space-around;
+        padding-left:0px;
+       
+    }
+    .ps-nav-link{
+        padding-left:8px;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding:.25rem 1rem .25rem 1rem;
+    }
+    .icona{
+        height: 17px;
+    }
+    .dropdown-menu{
+        width:100vw;
+    }
+.dropdown a{
+    font-size:10px;
+   text-align: center;
+}
+
 
     @keyframes blink { 
         0% {
@@ -121,4 +155,9 @@ nav img, nav svg {
         100% {
             transform: translate(98.692997px,117.896004px) scale(1,1)}
         }
+}
+@media screen and (min-width:768px){
+.icona{
+   display:none;
+}
 }

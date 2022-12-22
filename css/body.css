@@ -3,7 +3,7 @@ body {
 }
 body .fixed-button {
   position: fixed;
-  bottom: 3rem;
+  bottom: 4rem;
   right: 3rem;
   padding: 1rem;
   z-index: 1000;
