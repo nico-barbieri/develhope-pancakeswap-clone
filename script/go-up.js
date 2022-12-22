@@ -10,7 +10,7 @@ $goUp.addEventListener('click', ()=>{
 window.addEventListener('scroll', () =>{
     if(window.pageYOffset < 600){
         $goUp.classList.add('pop-out')
-    }else if (window.pageYOffset + window.innerHeight> (document.body.offsetHeight - 40)){
+    }else if (window.pageYOffset + window.innerHeight> (document.body.offsetHeight - 40) && (window.innerWidth > 575 ) && (window.innerWidth <1388 )){
         $goUp.classList.add('pop-out');
     }else {
         $goUp.classList.remove('pop-out');
