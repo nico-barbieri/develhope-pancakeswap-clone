@@ -7,14 +7,13 @@ const $loader = document.querySelector('.chart-loader');
 const $date = document.getElementById('tooltip-date');
 const $value = document.getElementById('tooltip-value');
 const $tradeMenuBtn = document.querySelectorAll(".small-menu-button");
-const $tradeBtn = document.querySelectorAll(".trade-button");
 const $timeRangeBtn = document.querySelectorAll(".time-range-button");
 
 let chartData = fakeData.chartData;
 let timeRange = 'day';
+
 //canvas size
 $swapGraph.canvas.parentNode.style.width = '100%';
-
   
 for (const btnName in buttons) {
     buttons[btnName].$button.addEventListener('click', () => {
