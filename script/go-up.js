@@ -7,13 +7,13 @@ $goUp.addEventListener('click', ()=>{
 })
 
 // hide button 
-
 window.addEventListener('scroll', () =>{
     if(window.pageYOffset < 600){
-                $goUp.classList.add('pop-out')
-            }
-            else{
-                $goUp.classList.remove('pop-out')
-            }
+        $goUp.classList.add('pop-out')
+    }else if (window.pageYOffset + window.innerHeight> (document.body.offsetHeight - 40)){
+        $goUp.classList.add('pop-out');
+    }else {
+        $goUp.classList.remove('pop-out');
+    }
  })
 

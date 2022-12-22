@@ -67,7 +67,6 @@ $color_7: white;
 }
 .footer2 {
 	margin-top: 10px;
-	border-bottom: 1px solid #383241;
 	display: flex;
 	padding-bottom: 28px;
 }
@@ -156,8 +155,11 @@ $color_7: white;
 }
 .footer3 {
 	display: flex;
+	border-top: 1px solid #383241;
+	border-bottom: 1px solid #383241;
 	justify-content: space-between;
-	margin-top: 2.3rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
 }
 .soldi {
 	display: inline;
@@ -206,7 +208,7 @@ $color_7: white;
 }
 @media screen and (max-width:1208px) {
 	.footer-wrapper {
-		padding: 56px 40px 32px;
+		padding: 2rem;
 		margin-bottom: 0px;
 	}
 }
