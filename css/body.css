@@ -37,6 +37,7 @@ body .fixed-button img {
   padding: 1rem 0;
 }
 
+
 /* section 2 */
 .section-2 {
   position: relative;
@@ -48,6 +49,17 @@ body .fixed-button img {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .ps-card {
+    flex-direction: column;
+    width: 290px;
+    height: 180px;
+  }
+  .small-title {
+    font-size: 32px;
+  }
 }
 
 /* section 3 */
