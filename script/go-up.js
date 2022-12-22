@@ -8,13 +8,12 @@ $goUp.addEventListener('click', ()=>{
 
 // hide button 
 
- window.addEventListener('scroll', () =>{
+window.addEventListener('scroll', () =>{
     if(window.pageYOffset < 600){
-                $goUp.classList.add('d-none')
+                $goUp.classList.add('pop-out')
             }
             else{
-                $goUp.classList.remove('d-none')
-            
+                $goUp.classList.remove('pop-out')
             }
  })
 

@@ -6,8 +6,8 @@ nav{
     position: fixed;
     transition: top 0.4s; 
     top: 0;
-    width: 98%;
-    z-index: 2;
+    width: 100%;
+    z-index: 10000;
 }
 
 :root:has(#dark-mode:checked) nav {
