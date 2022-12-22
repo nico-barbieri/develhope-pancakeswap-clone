@@ -4,7 +4,7 @@ body {
     .fixed-button {
         position: fixed;
         bottom: 4rem;
-        right: 4rem;
+        right: 3rem;
         padding: 1rem;
         z-index: 1000;
         scale: 1;
@@ -39,14 +39,19 @@ body {
         }
     }
 }
-@media screen and (max-width: 768px) {
+
+
+@media screen and (max-width: 820px) {
     .ps-card {
       flex-direction: column;
       width: 290px;
       height: 180px;
     }
-    .small-title {
-      font-size: 32px;
+    .title {
+      font-size: 48px;
+    }
+    br {
+      display: none;
     }
   }
 
@@ -168,6 +173,7 @@ body {
     fill: var(--secondary-lightest);
 }
 
+
 /***********/
 /*SECTION 5*/
 /***********/
@@ -254,6 +260,7 @@ body {
     }
 }
 
+
 /***********/
 /*SECTION 7*/
 /***********/
@@ -299,6 +306,14 @@ body {
     }
 
 }
+@media screen and (max-width: 412px) { 
+    .paragraph {
+      text-align: center;
+    }
+    .section-7 .animation-box {
+      display:none;
+    }
+  }
 
 /********/
 /*LOADER*/
