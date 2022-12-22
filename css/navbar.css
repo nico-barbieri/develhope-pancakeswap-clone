@@ -7,7 +7,7 @@ nav{
     display: flex;
     transition: top 0.4s; 
     top: 0;
-    height: 3rem;
+    height: 3.5rem;
     width: 100%;
     z-index: 10000;
 }
@@ -52,7 +52,7 @@ nav{
     position: absolute;
     display: flex;
     flex-direction: column;
-    top: 2.75rem;
+    top: 3.25rem;
     opacity: 0;
     padding: .75rem 0;
     pointer-events: none;
