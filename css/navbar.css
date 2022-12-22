@@ -97,28 +97,28 @@ nav img, nav svg {
     }
 }
 
+@keyframes blink-logo-small { 
+    0% {
+        transform: translate(98.692997px,117.896004px) scale(1,1);
+        animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+    } 
+    50% {
+        transform: translate(98.692997px,117.896004px) scale(1,0);
+        animation-timing-function: cubic-bezier(0.7,0,0.3,1)
+    } 
+    100% {
+        transform: translate(98.692997px,117.896004px) scale(1,1)}
+    }
+
 @media screen and (max-width: 967px) {
-    .logo-small {
+    nav .logo-small {
         display: block;
     }
-    .logo-extended {
+    nav .logo-extended {
         display: none;
     }
 
     .logo-small:hover .eyes{
-        animation: blink 500ms linear 1 normal forwards
+        animation: blink-logo-small 500ms linear 1 normal forwards
     }
-
-    @keyframes blink { 
-        0% {
-            transform: translate(98.692997px,117.896004px) scale(1,1);
-            animation-timing-function: cubic-bezier(0.7,0,0.3,1)
-        } 
-        50% {
-            transform: translate(98.692997px,117.896004px) scale(1,0);
-            animation-timing-function: cubic-bezier(0.7,0,0.3,1)
-        } 
-        100% {
-            transform: translate(98.692997px,117.896004px) scale(1,1)}
-        }
 }

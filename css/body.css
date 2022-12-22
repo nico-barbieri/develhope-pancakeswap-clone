@@ -3,8 +3,8 @@ body {
 }
 body .fixed-button {
   position: fixed;
-  bottom: 3rem;
-  right: 3rem;
+  bottom: 4rem;
+  right: 4rem;
   padding: 1rem;
   z-index: 1000;
   scale: 1;
@@ -275,6 +275,11 @@ body .fixed-button img {
   display: none;
 }
 
+@media screen and (max-width: 1224px) {
+  .landing-section, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7 {
+    padding: 4rem 1rem;
+  }
+}
 @media screen and (max-width: 768px) {
   .landing-section, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7 {
     padding: 4rem 1rem;
