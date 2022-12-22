@@ -59,6 +59,10 @@ nav{
     transform: translate(0, -1rem);
     transition: all .1s ease-in-out;
 }
+.dropdown .dropdown-menu:has(.dropdown-lang) {
+    padding: 0 0;
+    overflow-x: hidden;
+}
 .dropdown .dropdown-menu::after{
     content: "";
     height: 1rem;
@@ -85,6 +89,7 @@ hr{
 .dropdown-lang{
     max-height: 400px;
     overflow-y: overlay;
+    padding: .75rem 0;
 }
 
 nav img, nav svg {
