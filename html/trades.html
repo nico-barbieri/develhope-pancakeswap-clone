@@ -156,8 +156,29 @@
                         </div>
                     </div>
                     <form class="trade-form d-flex flex-column gap-3">
-                        <input type="text" class="sell">
-                        <input type="text" class="buy">
+                      <div class="d-flex flex-column gap-3 trade-form-container-xs ">
+                        <div class="form-input-container">
+                          <div class="d-flex gap-3">
+                            <img src="../res/round-logo.svg" alt="" width="30px" >
+                            <h4 class="sub-title trade-button">BNB 
+                              <img src="../res/icons/arrow-down.svg" alt="dropdown-icon">
+                            </h4>
+                          </div>
+                          <input type="number" class="sell" placeholder="0.0">
+                        </div>
+                        <button  class="mx-auto trade-button"  disabled>
+                          <img src="../res/icons/full-arrow-down.svg" alt="arrow-down" id="invert">
+                        </button>
+                        <div class="form-input-container">
+                          <div class="d-flex gap-3">
+                            <img src="../res/icons/cube-icon.svg" alt="" width="30px">
+                            <h4 class="sub-title trade-button">CAKE 
+                              <img src="../res/icons/arrow-down.svg" alt="dropdown-icon">
+                            </h4>
+                          </div>
+                          <input type="number" class="buy" placeholder="0.0">
+                        </div>
+                      </div>
                         <button class="main-button">Connect Wallet</button>
                     </form> 
                 </div>
@@ -165,6 +186,7 @@
         </div>
     </main>
 
+    <script src="../script/invert.js"></script>
     <script type="module" src="../script/setActive.mjs"></script>
     <script type="module" src="../script/trade.mjs"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

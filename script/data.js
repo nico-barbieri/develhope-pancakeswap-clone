@@ -38,3 +38,4 @@ btnData.addEventListener('click', restartSwitchData)
 
 //start loop when page loads
 startSwitchData(switchData, 4000);
+
