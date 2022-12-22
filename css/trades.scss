@@ -77,6 +77,7 @@ main {
                         margin-right: .5ch;
                     }
                 }
+
                 .time-range-selection {
                     width: fit-content;
                     height: 2rem;
@@ -189,13 +190,53 @@ main {
             .trade-form {
                 padding: var(--cards-padding);
 
-                input {
-                    border-radius: var(--button-border-radius);
-                    height: var(--button-height);
-                    padding: var(--button-padding);
-                    background: var(--primary-darker);
+                #invert {
+                    width: 40px;
+                    border-radius: 50%;
+                    padding: 5px;
+                    ;
+
+                    img {
+                        width: 100%
+                    }
+
+                    ;
+                }
+                .form-input-container{
+                    input {
+                        width: 100%;
+                        text-align: end;
+                        border-radius: 10px;
+                        height: var(--button-height);
+                        padding: var(--button-padding);
+                        background: #EEEAF4;
+                        text-decoration: none;
+                        &::-webkit-outer-spin-button,
+                        &::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+                        &:focus{
+                            outline:none;
+                           }
+                    }
+                }
+                
+
+
+                ::-webkit-input-placeholder {
+                    text-align: end;
                 }
             }
         }
     }
 }
+
+//responsive//
+
+@media  screen and (max-width: 1200px) {
+    .trading-window-wrapper{
+        flex-wrap: wrap;
+    }
+}
+// 
