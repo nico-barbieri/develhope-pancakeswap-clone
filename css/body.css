@@ -56,11 +56,10 @@ body .fixed-button img {
 }
 .section-2 .cards-container {
   gap: 1rem;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1224px) {
   .ps-card {
     flex-direction: column;
     width: 290px;
