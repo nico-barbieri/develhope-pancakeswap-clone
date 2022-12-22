@@ -3,7 +3,7 @@ body {
 }
 body .fixed-button {
   position: fixed;
-  bottom: 4rem;
+  bottom: 3rem;
   right: 3rem;
   padding: 1rem;
   z-index: 1000;
@@ -37,19 +37,6 @@ body .fixed-button img {
   padding: 1rem 0;
 }
 
-@media screen and (max-width: 820px) {
-  .ps-card {
-    flex-direction: column;
-    width: 290px;
-    height: 180px;
-  }
-  .title {
-    font-size: 48px;
-  }
-  br {
-    display: none;
-  }
-}
 /* section 2 */
 .section-2 {
   position: relative;
@@ -63,16 +50,6 @@ body .fixed-button img {
   justify-content: center;
 }
 
-@media screen and (max-width: 768px) {
-  .ps-card {
-    flex-direction: column;
-    width: 290px;
-    height: 180px;
-  }
-  .small-title {
-    font-size: 32px;
-  }
-}
 /* section 3 */
 .section-3 {
   position: relative;
@@ -134,7 +111,7 @@ body .fixed-button img {
 .section-4 .data-section .data-container .data > *:not(:first-child) {
   border-left: 1px solid var(--secondary-lightest);
   padding-left: 1rem;
-  margin-bottom: 3rem;
+  /*margin-bottom: 3rem;*/
 }
 .section-4 .data-section .data-container .show-data {
   opacity: 1;
@@ -226,9 +203,14 @@ body .fixed-button img {
   width: 100%;
   justify-content: space-between;
 }
-.section-6 .data > :not(:first-child) > * {
+.section-6 .data > * {
+  margin-bottom: 0.5rem;
+  padding-left: 0;
+  padding-right: 0;
+}
+.section-6 .data > * > * {
   border-left: 1px solid var(--secondary-lightest);
-  padding-left: 1rem;
+  padding-left: 0.75rem;
 }
 
 /***********/
@@ -272,14 +254,6 @@ body .fixed-button img {
   right: -4rem;
 }
 
-@media screen and (max-width: 412px) {
-  .paragraph {
-    text-align: center;
-  }
-  .section-7 .animation-box {
-    display: none;
-  }
-}
 /********/
 /*LOADER*/
 /********/
@@ -308,32 +282,99 @@ body .fixed-button img {
 
 @media screen and (max-width: 1224px) {
   .landing-section, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7 {
-    padding: 4rem 1rem;
+    padding: 3rem 2rem;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .landing-section, .section-2, .section-3, .section-4, .section-5, .section-6, .section-7 {
-    padding: 4rem 1rem;
     flex-direction: column;
   }
   .landing-section-wrapper, .section-3-wrapper, .section-4-top, .section-5-wrapper, .section-6-top, .section-7-wrapper {
     flex-direction: column-reverse !important;
+    width: 100%;
   }
-  .big-cards-container {
+  .text-box {
+    margin-top: 1rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    z-index: 10;
+  }
+  .text-box br {
+    display: none;
+  }
+  .cards-container {
+    flex-direction: column;
+  }
+  .cards-container .ps-card {
+    width: 290px;
+    height: 180px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body .fixed-button {
+    bottom: 4rem;
+    right: 1rem;
+  }
+  body .big-cards-container {
     flex-direction: column;
     gap: 2rem;
   }
-  .big-cards-container .left-card, .big-cards-container .right-card {
+  body .text-box {
+    align-items: center;
+  }
+  body .title {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+  body .big-cards-container .left-card, body .big-cards-container .right-card {
     transform: rotate(0deg);
   }
-  .section-6 .data {
+  body .section-6 .data {
     flex-wrap: wrap;
   }
-  .section-6 .data div {
+  body .section-6 .data div {
     gap: inherit !important;
   }
-  .section-6 .data > :not(:first-child) > * {
+}
+@media screen and (max-width: 480px) {
+  .text-box .title, .text-box .small-title {
+    font-size: 8vw;
+    line-height: 1;
+  }
+  .text-box .subtitle {
+    font-size: 6vw;
+  }
+  .section-4 .data-section .data-container {
+    height: 9rem;
+  }
+  .section-4 .data-section .data-container .data {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+  .section-4 .data-section .data-container .data > div {
+    margin-bottom: 1rem;
+    min-width: 33%;
+    flex: 1;
+    padding-left: 0;
+    text-align: center;
+  }
+  .section-4 .data-section .data-container .data > div:nth-child(4) {
     border-left: none;
-    padding-left: inherit;
+  }
+  .section-4 .data-section .data-container .data > div:not(:first-child) {
+    padding-left: 0;
+  }
+  .section-5 .section-5-wrapper .glass {
+    padding: 1.5rem;
+    border-radius: 1.5rem;
+  }
+  .section-5 .section-5-wrapper .glass::after {
+    border-radius: 1.5rem;
+  }
+  .section-5 .section-5-wrapper .glass .big-ps-card {
+    width: 100%;
+    height: 50%;
   }
 }/*# sourceMappingURL=body.css.map */

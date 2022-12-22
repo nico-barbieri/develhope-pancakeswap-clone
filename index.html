@@ -24,7 +24,7 @@
 </head>
 
 <body id="body">
-    <nav class="d-flex py-1" data-template="navbar" onload="importTemplates()" id="navbar">
+    <nav class="d-flex py-1">
         <div class="col-2 col-lg-4 d-flex align-items-center">
             <div class="d-flex align-items-center nav-logo ps-3">
                 <a href="./index.html">
@@ -80,8 +80,7 @@
             </div>
             <div class="menu-links d-flex align-items-center px-3">
                 <div class="dropdown">
-                    <a class="ps-nav-link paragraph" href="./html/trades.html" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="ps-nav-link paragraph" href="./html/trades.html">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" color="textSubtle"
                             width="24" xmlns="http://www.w3.org/2000/svg" class="sc-4ba21b47-0 ebMyYP icona" height="24">
                             <path
@@ -106,8 +105,7 @@
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <a class="ps-nav-link paragraph" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="ps-nav-link paragraph" href="#">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" color="textSubtle"
                             width="24" xmlns="http://www.w3.org/2000/svg" class="sc-4ba21b47-0 ebMyYP icona" height="24">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -135,8 +133,7 @@
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <a class="ps-nav-link paragraph" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="ps-nav-link paragraph" href="#">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 19 17" color="textSubtle"
                             width="20" xmlns="http://www.w3.org/2000/svg" class="sc-4ba21b47-0 ebMyYP icona " height="18">
                             <path
@@ -154,8 +151,7 @@
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <a class="ps-nav-link paragraph" href="./html/nft.html" role="" data-bs-toggle=""
-                        aria-expanded="false">
+                    <a class="ps-nav-link paragraph" href="./html/nft.html">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" color="textSubtle"
                             width="24" xmlns="http://www.w3.org/2000/svg" class="sc-4ba21b47-0 ebMyYP icona " height="24">
                             <path
@@ -172,8 +168,7 @@
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <a class="ps-nav-link paragraph" href="#" role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
+                    <a class="ps-nav-link paragraph" href="#">
                         <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" color="textSubtle" width="24" xmlns="http://www.w3.org/2000/svg" class="sc-4ba21b47-0 ebMyYP" height="24"><path d="M6 10C4.9 10 4 10.9 4 12C4 13.1 4.9 14 6 14C7.1 14 8 13.1 8 12C8 10.9 7.1 10 6 10ZM18 10C16.9 10 16 10.9 16 12C16 13.1 16.9 14 18 14C19.1 14 20 13.1 20 12C20 10.9 19.1 10 18 10ZM12 10C10.9 10 10 10.9 10 12C10 13.1 10.9 14 12 14C13.1 14 14 13.1 14 12C14 10.9 13.1 10 12 10Z" fill="#7A6EAA"></path></svg>
                     </a>
 
@@ -239,7 +234,7 @@
                 <a class="ps-nav-link paragraph color-sec-darker menu-button" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false">
                     <img src="./res/icons/bnb.png" alt="cubo-portal">
-                    BNB<span class="d-none d-xl-block ">&thinsp;Smart Chain</span>
+                    <span class="d-none d-sm-block">BNB</span> <span class="d-none d-xl-block ">&thinsp;Smart Chain</span>
                     <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24" color="text" width="24"
                         xmlns="http://www.w3.org/2000/svg" class="sc-4ba21b47-0 IIbzK" height="24">
                         <path
@@ -255,7 +250,7 @@
                 </ul>
             </div>
             <div class="connect-wallet pe-3">
-                <button class="menu-button">Connect Wallet</button>
+                <button class="menu-button">Connect <span class="d-none d-sm-block">Wallet</span></button>
             </div>
         </div>
     </nav>
@@ -734,37 +729,36 @@
                         class="animation-layer pancake" data-layer="2">
                 </div>
             </div>
-            <div class="data d-flex">
-                <div class="d-flex flex-column gap-5">
-                    <div>
+            <div class="data d-flex row">
+                
+                    <div class="col-6 col-md-4">
                         <p class="paragraph">Circulating Supply</p>
                         <p class="small-title big-data">145,764,388</p>
                     </div>
-                    <div>
+                    <div class="col-6 col-md-4">
                         <p class="paragraph">Market cap</p>
                         <p class="small-title big-data">$570 million</p>
                     </div>
-                </div>
-                <div class="d-flex flex-column gap-5">
-                    <div>
+                
+                
+                    <div class="col-6 col-md-4">
                         <p class="paragraph">Total supply</p>
                         <p class="small-title big-data">345,337,763</p>
                     </div>
-                    <div>
+                    <div class="col-6 col-md-4">
                         <p class="paragraph">Burned to date</p>
                         <p class="small-title big-data">646,943,269</p>
                     </div>
-                </div>
-                <div class="d-flex flex-column gap-5">
-                    <div>
+                
+                    <div class="col-6 col-md-4">
                         <p class="paragraph">Max Supply</p>
                         <p class="small-title big-data">750,000,000</p>
                     </div>
-                    <div>
+                    <div class="col-6 col-md-4">
                         <p class="paragraph">Current emissions</p>
                         <p class="small-title big-data">11.16/block</p>
                     </div>
-                </div>
+                
             </div>
         </div>
     </div>
