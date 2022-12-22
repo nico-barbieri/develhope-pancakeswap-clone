@@ -37,14 +37,17 @@ body .fixed-button img {
   padding: 1rem 0;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 820px) {
   .ps-card {
     flex-direction: column;
     width: 290px;
     height: 180px;
   }
-  .small-title {
-    font-size: 32px;
+  .title {
+    font-size: 48px;
+  }
+  br {
+    display: none;
   }
 }
 /* section 2 */
@@ -56,10 +59,11 @@ body .fixed-button img {
 }
 .section-2 .cards-container {
   gap: 1rem;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
-@media screen and (max-width: 1224px) {
+@media screen and (max-width: 768px) {
   .ps-card {
     flex-direction: column;
     width: 290px;
