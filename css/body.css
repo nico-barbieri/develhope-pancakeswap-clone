@@ -36,6 +36,16 @@ body .fixed-button img {
 .landing-section .landing-section-wrapper title {
   padding: 1rem 0;
 }
+@media screen and (min-width: 768px) and (max-width: 820px) {
+  .text-box .title {
+      font-size: 48px;
+      font-weight: 500;
+  }
+  br {
+    display:none;
+  }
+}
+
 
 /* section 2 */
 .section-2 {
@@ -48,6 +58,17 @@ body .fixed-button img {
   gap: 1rem;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+@media screen and (max-width: 768px) {
+  .ps-card {
+    flex-direction: column;
+    width: 290px;
+    height: 180px;
+  }
+  .small-title {
+    font-size: 32px;
+  }
 }
 
 /* section 3 */
