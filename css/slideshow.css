@@ -85,6 +85,9 @@
     object-fit: contain;
 }
 
+.text-responsive {
+    font-size: calc(100% + 1.5vw + 1.5vh);
+}
 
 @media screen and (max-width: 480px) {
     .slide-container .bg-image {
