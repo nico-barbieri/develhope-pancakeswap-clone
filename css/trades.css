@@ -33,14 +33,15 @@ main .small-menu .button-wrapper a.active::after {
   width: 120%;
 }
 main .trading-window {
+  position: relative;
   background: linear-gradient(140deg, #e5fdff, #f3efff);
   width: 100vw;
-  padding: 2.5rem;
-  min-height: calc(100vh - 2.5rem - 3.5rem);
+  height: calc(100vh - 2.5rem - 3.5rem);
   /*viewport height - navbar height - small menu height - nav height*/
 }
 main .trading-window .trade-section {
   display: none;
+  padding: 2.5rem;
 }
 main .trading-window .trade-section.show-window {
   display: flex;
@@ -120,7 +121,7 @@ main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader {
   left: 0;
   height: 100%;
   width: 100%;
-  background: var(--primary);
+  background: var(--card-background);
   pointer-events: none;
 }
 main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.faded {

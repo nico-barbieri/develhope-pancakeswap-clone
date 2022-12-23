@@ -3,26 +3,19 @@
     padding:0;
 }
 
-
-.container, .wrapper{
-    display:flex;
-    height: 78%;
-    display:flex;
-    align-items: center;
-    width: 100%;
-}
 .wrapper{
     height: 100vh; /*da modificare appena si aggiunge menu' e footer*/
     max-width: 100vw;
-    display:flex;
-}
-.container{
-    display:flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  background-color: rgb(239, 243, 255);
+    display:flex;
 }
+
+.liquidity {
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
 .void{
     flex-grow: 1;
 }
@@ -33,12 +26,7 @@
     display:flex;
     align-items: center;
 }
-@media screen and (max-width: 851px) {
-    .semi-footer{
-        flex-flow: column wrap;
-        
-    }
-  }
+
 #target, #target a, #target svg{
     text-decoration: none;
     color:#1fc7d4;
@@ -54,7 +42,11 @@
 #target{
     padding-left:72px;
 }
-
+.second-part {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
 .second-part, .second-part a{
     display:inline-flex;
    align-items: center;
@@ -69,31 +61,32 @@
 .liquidity-container{
     display:flex;
     flex-direction: column;
-    margin-top:31px;
     max-width: 436px;
+    max-height: 283px;
     width: 100%;
-    border-radius: 23px;
-    border: 1px solid rgb(155, 152, 152);
+    margin-top:2rem;
+    background: var(--card-background);
+    border-radius: 1.5rem;
+    border: 1px solid var(--primary-darker);
+    box-shadow: 0px 2px 0px 0px var(--card-shadow);
+    flex: 1;
+    align-self: center;
 }
 
-.liquidity{
-    
-    background-color: white;
-    display:flex;
-    flex-direction: column;
-    padding:24px;
-}
 .liquidity-row{
-   
     display:flex;
     justify-content: space-between;
 }
-.text{
-    color:#280D5F;
-    font-size:20px;
+
+.liquidity-header {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
-.options button{
+.liquidity-icons button{
+    padding: 0 .5rem;
     border:none;
     background-color: transparent;
 }
@@ -114,36 +107,13 @@
     line-height: 1.5;
 }
 .add{
-    padding:24px;
-    background-color: white;
+    padding: 1.5rem;
 }
-
 .add button {
-    align-items: center;
-    border: 0px;
-    border-radius: 16px;
-    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
-    cursor: pointer;
-    display: inline-flex;
-    font-size: 16px;
-    font-weight: 600;
-    justify-content: center;
-    letter-spacing: 0.03em;
-    opacity: 1;
-    text-decoration: none;
-    height: 48px;
-    padding: 0px 24px;
-    background-color:#1fc7d4 ;
-    color:white;
     width: 100%;
-    transition: opacity  2ms ease-in-out;
 }
-.add a {
-    text-decoration: none;
-}
-
-.add:hover{
-    opacity:.5;
+.add button svg {
+    fill: var(--primary);
 }
 .help #need-help{
     position:relative;
@@ -173,4 +143,13 @@
 
 .icon{
    margin-left:3px;
+}
+
+:root:has(#dark-mode:checked) .connect {
+    background: var(--primary);
+    border-top: 1px solid var(--card-shadow-dark);
+    border-bottom: 1px solid var(--card-shadow-dark);
+}
+:root:has(#dark-mode:checked) .liquidity-container {
+    border: 1px solid var(--card-shadow-dark);
 }
