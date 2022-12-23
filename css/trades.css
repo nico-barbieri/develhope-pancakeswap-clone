@@ -36,12 +36,11 @@ main .trading-window {
   position: relative;
   background: linear-gradient(140deg, #e5fdff, #f3efff);
   width: 100vw;
-  height: calc(100vh - 2.5rem - 3.5rem);
+  min-height: calc(100vh - 2.5rem - 3.5rem);
   /*viewport height - navbar height - small menu height - nav height*/
 }
 main .trading-window .trade-section {
   display: none;
-  padding: 2.5rem;
 }
 main .trading-window .trade-section.show-window {
   display: flex;
@@ -219,6 +218,15 @@ main .trading-window .trade .trade-form ::-webkit-input-placeholder {
   }
   100% {
     rotate: 1turn;
+  }
+}
+@media screen and (max-width: 768px) {
+  .trading-window {
+    min-height: calc(100vh - 2.5rem - 3.5rem - 3rem);
+  }
+  .trading-window:has(.liquidity.show-window) {
+    min-height: unset;
+    height: calc(100vh - 2.5rem - 3.5rem - 3rem);
   }
 }
 @media screen and (max-width: 1200px) {

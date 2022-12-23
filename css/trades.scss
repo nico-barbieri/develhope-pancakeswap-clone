@@ -50,11 +50,10 @@ main {
         position: relative;
         background: linear-gradient(140deg, #e5fdff, #f3efff);
         width: 100vw;
-        height: calc(100vh - 2.5rem - 3.5rem);
+        min-height: calc(100vh - 2.5rem - 3.5rem);
         /*viewport height - navbar height - small menu height - nav height*/
         .trade-section {
             display: none;
-            padding: 2.5rem;
             &.show-window {
                 display: flex;
             }
@@ -259,7 +258,15 @@ main {
     }
 }
 //responsive//
-
+@media screen and (max-width:768px) {
+    .trading-window {
+        min-height: calc(100vh - 2.5rem - 3.5rem - 3rem);
+        &:has(.liquidity.show-window) {
+            min-height: unset;
+            height: calc(100vh - 2.5rem - 3.5rem - 3rem);;
+        }
+    }
+}
 @media  screen and (max-width: 1200px) {
     main {
 
