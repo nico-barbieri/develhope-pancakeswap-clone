@@ -5,7 +5,9 @@ export function assignActive(buttons) {
             buttons.forEach(button => {
                 button.classList.remove('active');
             });
-            buttons[i].classList.add('active')
+            setTimeout(() => {
+                buttons[i].classList.add('active');
+            }, 1);
         })
     }
 }

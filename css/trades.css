@@ -1,5 +1,7 @@
 main .small-menu {
+  margin-top: 3.5rem;
   height: 2.5rem;
+  background: var(--primary);
 }
 main .small-menu .button-wrapper {
   height: 100%;
@@ -34,8 +36,8 @@ main .trading-window {
   background: linear-gradient(140deg, #e5fdff, #f3efff);
   width: 100vw;
   padding: 2.5rem;
-  min-height: calc(100vh - 2.5rem);
-  /*viewport height - navbar height - small menu height*/
+  min-height: calc(100vh - 2.5rem - 3.5rem);
+  /*viewport height - navbar height - small menu height - nav height*/
 }
 main .trading-window .trading-window-wrapper {
   margin: 0 auto;
@@ -129,7 +131,6 @@ main .trading-window .trading-window-wrapper .graph .chart-area .chart-loader.lo
 }
 main .trading-window .trading-window-wrapper .graph .chart-area canvas {
   width: 100%;
-  height: 100%;
 }
 main .trading-window .trade {
   justify-content: space-between;
@@ -144,9 +145,9 @@ main .trading-window .trade .trade-header {
   padding: var(--cards-padding);
 }
 main .trading-window .trade .trade-header .trade-buttons .trade-button {
-  background: transparent;
   height: 1.5rem;
   width: 1.5rem;
+  background-color: transparent;
 }
 main .trading-window .trade .trade-header .trade-buttons .trade-button:hover {
   opacity: 0.66;
@@ -160,12 +161,21 @@ main .trading-window .trade .trade-form h4 {
   align-items: center;
 }
 main .trading-window .trade .trade-form #invert {
-  width: 40px;
+  width: 2rem;
+  height: 2rem;
   border-radius: 50%;
   padding: 5px;
+  background: #EEEAF4;
 }
 main .trading-window .trade .trade-form #invert img {
   width: 100%;
+  -o-object-fit: none;
+     object-fit: none;
+  vertical-align: unset;
+}
+main .trading-window .trade .trade-form #invert.active {
+  -webkit-animation: turn 0.3s cubic-bezier(0.25, 0, 0.25, 1.25) 1 normal backwards;
+          animation: turn 0.3s cubic-bezier(0.25, 0, 0.25, 1.25) 1 normal backwards;
 }
 main .trading-window .trade .trade-form .form-input-container input {
   width: 100%;
@@ -187,6 +197,23 @@ main .trading-window .trade .trade-form ::-webkit-input-placeholder {
   text-align: end;
 }
 
+@-webkit-keyframes turn {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 1turn;
+  }
+}
+
+@keyframes turn {
+  0% {
+    rotate: 0;
+  }
+  100% {
+    rotate: 1turn;
+  }
+}
 @media screen and (max-width: 1200px) {
   main .trading-window {
     padding: 5vw;
@@ -203,4 +230,10 @@ main .trading-window .trade .trade-form ::-webkit-input-placeholder {
     flex-direction: column;
     gap: 0.5rem;
   }
+}
+:root:has(#dark-mode:checked) .trading-window {
+  background: linear-gradient(140deg, #313d5c, #3d2a54);
+}
+:root:has(#dark-mode:checked) .trade-form input, :root:has(#dark-mode:checked) #invert, :root:has(#dark-mode:checked) .time-range-selection {
+  background: #372f47;
 }/*# sourceMappingURL=trades.css.map */

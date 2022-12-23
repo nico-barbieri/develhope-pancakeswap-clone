@@ -8,6 +8,7 @@ const $date = document.getElementById('tooltip-date');
 const $value = document.getElementById('tooltip-value');
 const $tradeMenuBtn = document.querySelectorAll(".small-menu-button");
 const $timeRangeBtn = document.querySelectorAll(".time-range-button");
+const $tradeBtn = document.querySelectorAll("#invert.trade-button");
 
 let chartData = fakeData.chartData;
 let timeRange = 'day';
@@ -188,7 +189,7 @@ $graphArea.addEventListener('mouseout', () => {
 //now manage buttons
 assignActive($timeRangeBtn);
 assignActive($tradeMenuBtn)
-
+assignActive($tradeBtn);
  
 /*
 Console max and min value of chartData[timeRange], its range and lowest/highest point of y axis:

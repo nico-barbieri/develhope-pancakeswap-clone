@@ -3,7 +3,9 @@ $trade-w: 20.5rem;
 
 main {
     .small-menu {
+        margin-top: 3.5rem; //nav-height
         height: $small-menu-h;
+        background: var(--primary);
 
         .button-wrapper {
             height: 100%;
@@ -48,8 +50,8 @@ main {
         background: linear-gradient(140deg, #e5fdff, #f3efff);
         width: 100vw;
         padding: 2.5rem;
-        min-height: calc(100vh - 2.5rem);
-        /*viewport height - navbar height - small menu height*/
+        min-height: calc(100vh - 2.5rem - 3.5rem);
+        /*viewport height - navbar height - small menu height - nav height*/
 
         .trading-window-wrapper {
             margin: 0 auto;
@@ -158,7 +160,6 @@ main {
 
                     canvas {
                         width: 100%;
-                        height: 100%;
                     }
                 }
             }
@@ -178,9 +179,9 @@ main {
 
                 .trade-buttons {
                     .trade-button {
-                        background: transparent;
                         height: 1.5rem;
                         width: 1.5rem;
+                        background-color: transparent;
 
                         &:hover {
                             opacity: .66;
@@ -199,16 +200,20 @@ main {
                 }
 
                 #invert {
-                    width: 40px;
+                    width: 2rem;
+                    height: 2rem;
                     border-radius: 50%;
                     padding: 5px;
-                    ;
+                    background: #EEEAF4;
 
                     img {
-                        width: 100%
+                        width: 100%;
+                        object-fit: none;
+                        vertical-align: unset;
                     }
-
-                    ;
+                    &.active {
+                        animation: turn .3s cubic-bezier(0.25, 0, 0.25, 1.25) 1 normal backwards;
+                    }
                 }
                 .form-input-container{
                     input {
@@ -239,7 +244,14 @@ main {
         }
     }
 }
-
+@keyframes turn {
+    0% {
+        rotate: 0;
+    }
+    100% {
+        rotate: 1turn;
+    }
+}
 //responsive//
 
 @media  screen and (max-width: 1200px) {
@@ -263,3 +275,13 @@ main {
     }
 }
 // 
+
+:root:has(#dark-mode:checked) {
+    .trading-window {
+        background: linear-gradient(140deg,#313d5c,#3d2a54);
+    }
+
+    .trade-form input, #invert, .time-range-selection {
+        background: #372f47;
+    }
+}

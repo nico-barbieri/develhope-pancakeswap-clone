@@ -10,6 +10,7 @@ nav{
     height: 3.5rem;
     width: 100%;
     z-index: 1000;
+    border-bottom: 1px solid var(--primary-darker);
 }
 
 
@@ -42,6 +43,7 @@ nav{
     height: 100%;
     display: flex;
     align-items: center;
+    background: var(--primary);
 }
 .icona{
     display:none;
@@ -142,7 +144,15 @@ nav img, nav svg {
 .bnb-smart-chain .dropdown-title:hover {
     background: transparent;
 }
-
+:root:has(#dark-mode:checked) .bnb-smart-chain .menu-button {
+    background: #353547;
+}
+:root:has(#dark-mode:checked) .bnb-smart-chain .menu-button span{
+    color: var(--primary-static);
+}
+:root:has(#dark-mode:checked) .bnb-smart-chain .menu-button svg{
+    fill: var(--primary-static);
+}
 @keyframes blink { 
     0% {
         transform: scale(1,1);
@@ -191,8 +201,7 @@ nav img, nav svg {
         bottom:0;
         width:100%;
         height: unset;
-        border-top:1px solid white;
-        background:white;
+        border-top:1px solid var(--primary);
         display:flex;
         justify-content: space-around;
         padding-left:0px;
