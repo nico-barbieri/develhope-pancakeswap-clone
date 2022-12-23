@@ -39,6 +39,12 @@ main .trading-window {
   min-height: calc(100vh - 2.5rem - 3.5rem);
   /*viewport height - navbar height - small menu height - nav height*/
 }
+main .trading-window .trade-section {
+  display: none;
+}
+main .trading-window .trade-section.show-window {
+  display: flex;
+}
 main .trading-window .trading-window-wrapper {
   margin: 0 auto;
 }

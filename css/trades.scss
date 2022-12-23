@@ -52,7 +52,12 @@ main {
         padding: 2.5rem;
         min-height: calc(100vh - 2.5rem - 3.5rem);
         /*viewport height - navbar height - small menu height - nav height*/
-
+        .trade-section {
+            display: none;
+            &.show-window {
+                display: flex;
+            }
+        }
         .trading-window-wrapper {
             margin: 0 auto;
 

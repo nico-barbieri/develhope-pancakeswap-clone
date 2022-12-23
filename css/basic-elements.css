@@ -100,6 +100,7 @@ a, a:hover, a:active, a:focus {
 body {
     overflow-y: overlay;
     overflow-x: hidden;
+    background: var(--primary);
 }
  
 /*Scroll-bar*/
