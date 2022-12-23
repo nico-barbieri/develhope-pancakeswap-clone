@@ -115,6 +115,11 @@
 .add button svg {
     fill: var(--primary);
 }
+.bottom-cta {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+}
 .help #need-help{
     position:relative;
     border: 0px;
@@ -152,4 +157,16 @@
 }
 :root:has(#dark-mode:checked) .liquidity-container {
     border: 1px solid var(--card-shadow-dark);
+}
+
+
+@media screen and (max-width: 768px) {
+    #target {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        bottom: 7rem;
+        padding-left: 0;
+        margin: 0 auto;
+    }
 }
