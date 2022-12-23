@@ -212,4 +212,9 @@
     padding: 2rem;
     margin-bottom: 0px;
   }
+}
+@media screen and (min-width: 576px) {
+  .footer3 {
+    border-bottom: none;
+  }
 }/*# sourceMappingURL=footer.css.map */

@@ -212,3 +212,9 @@ $color_7: white;
 		margin-bottom: 0px;
 	}
 }
+
+@media screen and (min-width:576px) {
+	.footer3 {
+		border-bottom: none;
+	}
+}
