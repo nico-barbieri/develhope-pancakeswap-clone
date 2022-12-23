@@ -47,6 +47,7 @@ main .trading-window .trade-section.show-window {
 }
 main .trading-window .trading-window-wrapper {
   margin: 0 auto;
+  padding-top: 3rem;
 }
 main .trading-window .trading-window-wrapper .graph {
   display: flex;
@@ -234,6 +235,7 @@ main .trading-window .trade .trade-form ::-webkit-input-placeholder {
     padding: 5vw;
   }
   main .trading-window .trading-window-wrapper {
+    padding: 0;
     flex-direction: column;
     align-items: center;
   }
